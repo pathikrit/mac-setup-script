@@ -109,7 +109,7 @@ function install {
 }
 
 install 'brew install' ${brews[@]}
-install 'brew cask install' ${casks[@]}
+install 'brew cask --appdir=/Applications install' ${casks[@]}
 install 'pip install' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'npm install -g' ${npms[@]}
