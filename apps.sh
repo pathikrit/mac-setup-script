@@ -30,6 +30,7 @@ casks=(
   intellij-idea
   istat-menus
   istat-server
+  mtr
   java
   launchrocket
   plex-home-theater
@@ -105,16 +106,22 @@ install 'pip install' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'npm install -g' ${npms[@]}
 
+echo "Setting up zsh ..."
+curl -L http://install.ohmyz.sh | sh
+chsh -s $(which zsh)
+# Use theme "ys" in ~/.zshrc
+
+echo "Upgrading ..."
+pip install --upgrade setuptools
+pip install --upgrade pip
+gem update --system
+
 echo "Cleaning up ..."
 brew cleanup
+brew cask cleanup
 brew linkapps
-gem update --system
-git config --global pull.rebase true
 
-echo "Setting up zsh ..."
-chsh -s $(which zsh)
-curl -L http://install.ohmyz.sh | sh
-# Use theme "ys" in ~/.zshrc
+git config --global pull.rebase true
 
 for fail in ${fails[@]}
 do
