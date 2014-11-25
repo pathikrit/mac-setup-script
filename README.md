@@ -1,4 +1,5 @@
-mac-setup-script
-================
+Dead simple script to setup my new Mac:
 
-script to setup my mac
+```shell
+curl -L https://raw.githubusercontent.com/pathikrit/mac-setup-script/master/apps.sh | sh
+```
