@@ -19,17 +19,26 @@ brews=(
 )
 
 casks=(
+  asepsis
   atom
+  betterzipql
+  cakebrew
   chromecast
   cleanmymac
   dropbox
   google-chrome
   google-drive
   github
+  hosts
   firefox
   intellij-idea
   istat-menus
   istat-server
+  qlcolorcode
+  qlmarkdown
+  qlstephen
+  quicklook-json
+  quicklook-csv
   mtr
   java
   launchrocket
