@@ -56,7 +56,6 @@ npms=(
   grunt
   coffee-script
   trash
-  pure-prompt
   gitjk
   fenix-cli
 )
