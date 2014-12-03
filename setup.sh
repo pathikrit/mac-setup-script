@@ -76,12 +76,12 @@ set +e
 echo "Installing Xcode ..."
 xcode-select --install
 
-if hash brew 2> /dev/null; then
-  echo "Updating Homebrew ..."
-  brew update
-else
+if test ! $(which brew); then
   echo "Installing Homebrew ..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  echo "Updating Homebrew ..."
+  brew update
 fi
 brew doctor
 
