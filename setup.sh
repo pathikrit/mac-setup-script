@@ -129,7 +129,6 @@ pip install --upgrade pip
 gem update --system
 
 echo "Cleaning up ..."
-git config --global pull.rebase true
 brew cleanup
 brew cask cleanup
 brew linkapps
