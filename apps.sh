@@ -140,10 +140,7 @@ echo "Run `mackup restore` after DropBox has done syncing"
 
 echo ""
 read -p "Hit enter to run [OSX for Hackers] script..." c
-curl -O https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh
-chmod +x osx-for-hackers.sh
-./osx-for-hackers.sh
-rm osx-for-hackers.sh
+sh -c "$(curl -sL https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh)"
 
 echo "Done!"
 
