@@ -7,6 +7,7 @@ brews=(
   git
   git-extras
   htop
+  mackup
   macvim
   node
   nmap
@@ -129,9 +130,13 @@ brew cleanup
 brew cask cleanup
 brew linkapps
 
-git config --global pull.rebase true
-
 for fail in ${fails[@]}
 do
   echo "Failed to install: $fail"
 done
+
+echo "Run `mackup restore` after DropBox has done syncing"
+
+echo "Setting up defaults ..."
+git config --global pull.rebase true
+
