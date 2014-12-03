@@ -126,9 +126,13 @@ pip install --upgrade pip
 gem update --system
 
 echo "Cleaning up ..."
+git config --global pull.rebase true
 brew cleanup
 brew cask cleanup
 brew linkapps
+
+echo "Running OSX for Hackers ..."
+curl -L https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh | sh
 
 for fail in ${fails[@]}
 do
@@ -136,7 +140,3 @@ do
 done
 
 echo "Run `mackup restore` after DropBox has done syncing"
-
-echo "Setting up defaults ..."
-git config --global pull.rebase true
-
