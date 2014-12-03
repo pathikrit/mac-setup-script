@@ -121,7 +121,7 @@ install 'npm install -g' ${npms[@]}
 echo "Setting up zsh ..."
 curl -L http://install.ohmyz.sh | sh
 chsh -s $(which zsh)
-# TODO: Auto-set theme to "ys" in ~/.zshrc
+# TODO: Auto-set theme to "fino-time" in ~/.zshrc (using antigen?)
 
 echo "Upgrading ..."
 pip install --upgrade setuptools
