@@ -70,6 +70,7 @@ npms=(
   fenix-cli
 )
 
+######################################## End of app list ########################################
 set +e
 
 echo "Installing Xcode ..."
@@ -109,6 +110,8 @@ function install {
   done
 }
 
+# TODO: Do a pre-install search to make sure these packages exist in remote
+
 install 'brew install' ${brews[@]}
 install 'brew cask --appdir=/Applications install' ${casks[@]}
 install 'pip install' ${pips[@]}
@@ -118,7 +121,7 @@ install 'npm install -g' ${npms[@]}
 echo "Setting up zsh ..."
 curl -L http://install.ohmyz.sh | sh
 chsh -s $(which zsh)
-# Use theme "ys" in ~/.zshrc
+# TODO: Auto-set theme to "ys" in ~/.zshrc
 
 echo "Upgrading ..."
 pip install --upgrade setuptools
@@ -138,9 +141,5 @@ done
 
 echo "Run `mackup restore` after DropBox has done syncing"
 
-echo ""
 read -p "Hit enter to run [OSX for Hackers] script..." c
 sh -c "$(curl -sL https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh)"
-
-echo "Done!"
-
