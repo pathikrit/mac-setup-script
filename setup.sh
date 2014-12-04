@@ -15,6 +15,7 @@ brews=(
   ruby
   scala
   sbt
+  tmux
   wget
   zsh
 )
