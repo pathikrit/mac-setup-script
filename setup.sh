@@ -122,6 +122,7 @@ echo "Setting up zsh ..."
 curl -L http://install.ohmyz.sh | sh
 chsh -s $(which zsh)
 # TODO: Auto-set theme to "fino-time" in ~/.zshrc (using antigen?)
+curl -sSL https://get.rvm.io | bash -s stable  # required for some zsh-themes
 
 echo "Upgrading ..."
 pip install --upgrade setuptools
