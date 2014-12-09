@@ -21,6 +21,7 @@ brews=(
 )
 
 casks=(
+  airdroid
   asepsis
   atom
   betterzipql
