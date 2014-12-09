@@ -90,12 +90,24 @@ brew doctor
 
 fails=()
 
-function error {
+function print_red {
   red='\x1B[0;31m'
   NC='\x1B[0m' # no color
-  msg="${red}Failed to execute: $1 $2${NC}"
-  fails+=($2)
-  echo -e $msg
+  echo -e "${red}$1${NC}"
+}
+
+function ping {
+  url=$1
+  shift
+  for pkg in $@;
+  do
+    exec="curl -Ifsw '%{http_code}' -o /dev/null $url/$pkg.rb"
+    if $exec ; then
+      echo "$pkg is available"
+    else
+      print_red "$pkg not found"
+    fi
+  done
 }
 
 function install {
@@ -108,12 +120,15 @@ function install {
     if $exec ; then
       echo "Installed $pkg"
     else
-      error $cmd $pkg
+      fails+=($pkg)
+      print_red "Failed to execute: $exec"
     fi
   done
 }
 
-# TODO: Do a pre-install search to make sure these packages exist in remote
+ping 'https://raw.githubusercontent.com/Homebrew/homebrew/master/Library/Formula/' ${brews[@]}
+ping 'https://raw.githubusercontent.com/caskroom/homebrew-cask/master/Casks' ${casks[@]}
+exit 0
 
 install 'brew install' ${brews[@]}
 install 'brew cask --appdir=/Applications install' ${casks[@]}
