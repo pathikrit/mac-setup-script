@@ -6,9 +6,10 @@ brews=(
   dfc
   git
   git-extras
-  htop
+  htop-osx
   mackup
   macvim
+  mtr
   node
   nmap
   python
@@ -42,7 +43,6 @@ casks=(
   qlstephen
   quicklook-json
   quicklook-csv
-  mtr
   java
   launchrocket
   plex-home-theater
@@ -128,7 +128,12 @@ function install {
 
 ping 'https://raw.githubusercontent.com/Homebrew/homebrew/master/Library/Formula/' ${brews[@]}
 ping 'https://raw.githubusercontent.com/caskroom/homebrew-cask/master/Casks' ${casks[@]}
-exit 0
+
+read -p "Proceed with installation? " -n 1 -r
+if [[ $REPLY =~ ^[Nn]$ ]]
+then
+    exit 1
+fi
 
 install 'brew install' ${brews[@]}
 install 'brew cask --appdir=/Applications install' ${casks[@]}
