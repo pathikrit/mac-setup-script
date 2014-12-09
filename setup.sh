@@ -47,6 +47,7 @@ casks=(
   launchrocket
   plex-home-theater
   plex-media-server
+  satellite-eyes
   sidekick
   spotify
   steam
