@@ -1,6 +1,7 @@
 #!/bin/bash
 
 brews=(
+  archey
   bash
   caskroom/cask/brew-cask
   dfc
