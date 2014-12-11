@@ -62,6 +62,7 @@ pips=(
 )
 
 gems=(
+  git-up
   travis
 )
 
