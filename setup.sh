@@ -7,7 +7,7 @@ brews=(
   dfc
   git
   git-extras
-  htop-osx
+  htop
   mackup
   macvim
   mtr
@@ -98,20 +98,6 @@ function print_red {
   echo -e "${red}$1${NC}"
 }
 
-function ping {
-  url=$1
-  shift
-  for pkg in $@;
-  do
-    exec="curl -Ifsw '%{http_code}' -o /dev/null $url/$pkg.rb"
-    if $exec ; then
-      echo "$pkg is available"
-    else
-      print_red "$pkg not found"
-    fi
-  done
-}
-
 function install {
   cmd=$1
   shift
@@ -128,17 +114,23 @@ function install {
   done
 }
 
-ping 'https://raw.githubusercontent.com/Homebrew/homebrew/master/Library/Formula/' ${brews[@]}
-ping 'https://raw.githubusercontent.com/caskroom/homebrew-cask/master/Casks' ${casks[@]}
-
-read -p "Proceed with installation? " -n 1 -r
-if [[ $REPLY =~ ^[Nn]$ ]]
-then
+function proceed_prompt {
+  read -p "Proceed with installation? " -n 1 -r
+  if [[ $REPLY =~ ^[Nn]$ ]]
+  then
     exit 1
-fi
+  fi
+}
 
+brew info ${brews[@]}
+proceed_prompt
 install 'brew install' ${brews[@]}
-install 'brew cask --appdir=/Applications install' ${casks[@]}
+
+brew cask info ${casks[@]}
+proceed_prompt
+install 'brew cask install --appdir="/Applications"' ${casks[@]}
+
+# TODO: add info part of install
 install 'pip install' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'npm install -g' ${npms[@]}
