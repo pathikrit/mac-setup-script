@@ -152,6 +152,9 @@ brew cleanup
 brew cask cleanup
 brew linkapps
 
+# Needed for BetterSnapTool to work
+defaults write com.apple.dock workspaces-edge-delay -float 2.0 
+
 for fail in ${fails[@]}
 do
   echo "Failed to install: $fail"
