@@ -61,6 +61,7 @@ casks=(
 
 pips=(
   Glances
+  pythonpy
 )
 
 gems=(
