@@ -70,11 +70,12 @@ gems=(
 )
 
 npms=(
-  grunt
   coffee-script
-  trash
-  gitjk
   fenix-cli
+  gitjk
+  grunt
+  json
+  trash
 )
 
 ######################################## End of app list ########################################
