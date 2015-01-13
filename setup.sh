@@ -8,6 +8,7 @@ brews=(
   git
   git-extras
   htop
+  httpie
   mackup
   macvim
   mtr
@@ -74,7 +75,6 @@ npms=(
   fenix-cli
   gitjk
   grunt
-  json
   trash
 )
 
