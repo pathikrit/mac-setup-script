@@ -24,6 +24,7 @@ brews=(
 )
 
 casks=(
+  adobe-reader
   airdroid
   asepsis
   atom
