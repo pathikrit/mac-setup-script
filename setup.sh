@@ -4,6 +4,7 @@ brews=(
   archey
   bash
   caskroom/cask/brew-cask
+  clib
   dfc
   git
   git-extras
