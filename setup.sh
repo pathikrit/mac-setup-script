@@ -80,6 +80,14 @@ npms=(
   trash
 )
 
+clibs=(
+  bpkg/bpkg
+)
+
+bkpgs=(
+  rauchg/wifi-password
+)
+
 ######################################## End of app list ########################################
 set +e
 
@@ -138,6 +146,8 @@ install 'brew cask install --appdir="/Applications"' ${casks[@]}
 # TODO: add info part of install
 install 'pip install' ${pips[@]}
 install 'gem install' ${gems[@]}
+install 'clib install' ${clibs[@]}
+install 'bpkg install' ${bpkgs[@]}
 install 'npm install -g' ${npms[@]}
 
 echo "Setting up zsh ..."
