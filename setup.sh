@@ -54,6 +54,7 @@ casks=(
   private-eye
   satellite-eyes
   sidekick
+  slack
   spotify
   steam
   teleport
