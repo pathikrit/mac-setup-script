@@ -58,7 +58,8 @@ casks=(
   spotify
   steam
   teleport
-  utorrent
+  transmission
+  transmission-remote-gui
   vlc
   zeroxdbe-eap
 )
