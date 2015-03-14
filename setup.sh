@@ -39,6 +39,7 @@ casks=(
   github
   hosts
   firefox
+  handbrake
   intellij-idea
   istat-menus
   istat-server
