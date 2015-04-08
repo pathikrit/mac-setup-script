@@ -159,6 +159,9 @@ chsh -s $(which zsh)
 # TODO: Auto-set theme to "fino-time" in ~/.zshrc (using antigen?)
 curl -sSL https://get.rvm.io | bash -s stable  # required for some zsh-themes
 
+echo "Setting git defaults ..."
+git config --global rerere.enabled true
+
 echo "Upgrading ..."
 pip install --upgrade setuptools
 pip install --upgrade pip
