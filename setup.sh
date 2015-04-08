@@ -161,6 +161,9 @@ curl -sSL https://get.rvm.io | bash -s stable  # required for some zsh-themes
 
 echo "Setting git defaults ..."
 git config --global rerere.enabled true
+git config --global branch.autosetuprebase always
+git config --global credential.helper osxkeychain
+git config --global user.email pathikritbhowmick@msn.com
 
 echo "Upgrading ..."
 pip install --upgrade setuptools
