@@ -15,6 +15,8 @@ brews=(
   mtr
   node
   nmap
+  postgresql
+  pgcli
   python
   ruby
   scala
