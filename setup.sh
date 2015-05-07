@@ -74,7 +74,7 @@ pips=(
 
 gems=(
   git-up
-  travis
+  bundle
 )
 
 npms=(
