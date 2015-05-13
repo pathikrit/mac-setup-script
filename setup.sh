@@ -96,6 +96,12 @@ bkpgs=(
   rauchg/wifi-password
 )
 
+git_configs=(
+  "rerere.enabled true"
+  "branch.autosetuprebase always"
+  "credential.helper osxkeychain"
+  "user.email pathikritbhowmick@msn.com"
+)
 
 ######################################## End of app list ########################################
 set +e
@@ -169,10 +175,10 @@ chsh -s $(which zsh)
 curl -sSL https://get.rvm.io | bash -s stable  # required for some zsh-themes
 
 echo "Setting git defaults ..."
-git config --global rerere.enabled true
-git config --global branch.autosetuprebase always
-git config --global credential.helper osxkeychain
-git config --global user.email pathikritbhowmick@msn.com
+for config in "${git_configs[@]}"
+do
+  git config --global ${config}
+done
 
 echo "Upgrading ..."
 pip install --upgrade setuptools
