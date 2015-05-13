@@ -5,7 +5,9 @@ brews=(
   bash
   brew-cask
   clib
+  coreutils
   dfc
+  findutils
   git
   git-extras
   htop
@@ -124,8 +126,10 @@ if test ! $(which brew); then
 else
   echo "Updating Homebrew ..."
   brew update
+  brew upgrade brew-cask
 fi
 brew doctor
+brew tap homebrew/dupes
 
 fails=()
 
@@ -166,6 +170,10 @@ install 'brew install' ${brews[@]}
 brew cask info ${casks[@]}
 proceed_prompt
 install 'brew cask install --appdir="/Applications"' ${casks[@]}
+
+echo "Tapping casks ..."
+brew tap caskroom/fonts
+brew tap caskroom/versions
 
 # TODO: add info part of install
 install 'pip install' ${pips[@]}
