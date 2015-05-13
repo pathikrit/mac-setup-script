@@ -57,6 +57,7 @@ casks=(
   quicklook-csv
   java
   launchrocket
+  microsoft-office
   plex-home-theater
   plex-media-server
   private-eye
