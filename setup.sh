@@ -45,6 +45,7 @@ casks=(
   intellij-idea
   istat-menus
   istat-server
+  iterm2
   qlcolorcode
   qlmarkdown
   qlstephen
@@ -63,6 +64,7 @@ casks=(
   teleport
   transmission
   transmission-remote-gui
+  tunnelbear
   vlc
   zeroxdbe-eap
 )
