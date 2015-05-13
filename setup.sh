@@ -117,10 +117,10 @@ fonts=(
 ######################################## End of app list ########################################
 set +e
 
-echo "Installing Xcode ..."
-xcode-select --install
-
 if test ! $(which brew); then
+  echo "Installing Xcode ..."
+  xcode-select --install
+
   echo "Installing Homebrew ..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
