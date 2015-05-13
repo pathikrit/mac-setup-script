@@ -108,6 +108,10 @@ apms=(
   language-scala
 )
 
+fonts=(
+  font-source-code-pro
+)
+
 ######################################## End of app list ########################################
 set +e
 
@@ -170,6 +174,7 @@ install 'clib install' ${clibs[@]}
 install 'bpkg install' ${bpkgs[@]}
 install 'npm install -g' ${npms[@]}
 install 'apm install' ${apms[@]}
+install 'brew cask install' ${fonts[@]}
 
 echo "Upgrading bash ..."
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
