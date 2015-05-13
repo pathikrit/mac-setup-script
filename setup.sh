@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/local/bin/bash
 
 brews=(
   archey
@@ -157,6 +157,9 @@ install 'gem install' ${gems[@]}
 install 'clib install' ${clibs[@]}
 install 'bpkg install' ${bpkgs[@]}
 install 'npm install -g' ${npms[@]}
+
+echo "Upgrading bash ..."
+sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 
 echo "Setting up zsh ..."
 curl -L http://install.ohmyz.sh | sh
