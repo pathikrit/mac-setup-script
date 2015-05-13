@@ -1,4 +1,4 @@
-#!/usr/local/bin/bash
+#!/usr/bin/env bash
 
 brews=(
   archey
@@ -95,6 +95,7 @@ clibs=(
 bkpgs=(
   rauchg/wifi-password
 )
+
 
 ######################################## End of app list ########################################
 set +e
