@@ -24,6 +24,7 @@ brews=(
   scala
   sbt
   tmux
+  trash
   tree
   wget
   zsh
@@ -87,7 +88,6 @@ npms=(
   coffee-script
   fenix-cli
   gitjk
-  trash
 )
 
 clibs=(
