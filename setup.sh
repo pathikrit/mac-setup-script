@@ -103,6 +103,11 @@ git_configs=(
   "user.email pathikritbhowmick@msn.com"
 )
 
+apms=(
+  circle-ci
+  language-scala
+)
+
 ######################################## End of app list ########################################
 set +e
 
@@ -164,6 +169,7 @@ install 'gem install' ${gems[@]}
 install 'clib install' ${clibs[@]}
 install 'bpkg install' ${bpkgs[@]}
 install 'npm install -g' ${npms[@]}
+install 'apm install' ${apms[@]}
 
 echo "Upgrading bash ..."
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
