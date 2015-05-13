@@ -3,7 +3,7 @@
 brews=(
   archey
   bash
-  caskroom/cask/brew-cask
+  brew-cask
   clib
   dfc
   git
@@ -22,6 +22,7 @@ brews=(
   scala
   sbt
   tmux
+  tree
   wget
   zsh
 )
@@ -36,11 +37,11 @@ casks=(
   chromecast
   cleanmymac
   dropbox
+  firefox
   google-chrome
   google-drive
   github
   hosts
-  firefox
   handbrake
   intellij-idea
   istat-menus
@@ -58,6 +59,7 @@ casks=(
   private-eye
   satellite-eyes
   sidekick
+  skype
   slack
   spotify
   steam
@@ -83,7 +85,6 @@ npms=(
   coffee-script
   fenix-cli
   gitjk
-  grunt
   trash
 )
 
