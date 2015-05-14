@@ -107,8 +107,23 @@ git_configs=(
 )
 
 apms=(
+  atom-beautify
+  autocomplete-plus
   circle-ci
+  markdown-preview
+  minimap
+  language-coffee-script
+  language-gfm
+  language-html
+  language-java
+  language-javascript
+  language-json
+  language-python
   language-scala
+  language-shellscript
+  language-sql
+  language-xml
+  language-yaml
 )
 
 fonts=(
