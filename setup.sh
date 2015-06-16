@@ -8,6 +8,7 @@ brews=(
   coreutils
   dfc
   findutils
+  fpp
   git
   git-extras
   htop
