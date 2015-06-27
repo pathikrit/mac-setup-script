@@ -21,6 +21,7 @@ brews=(
   postgresql
   pgcli
   python
+  python3
   ruby
   scala
   sbt
