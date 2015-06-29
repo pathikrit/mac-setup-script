@@ -114,6 +114,7 @@ apms=(
   circle-ci
   markdown-preview
   minimap
+  nuclide-installer
   language-coffee-script
   language-gfm
   language-html
