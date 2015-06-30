@@ -11,6 +11,7 @@ brews=(
   fpp
   git
   git-extras
+  go
   htop
   httpie
   mackup
