@@ -92,6 +92,7 @@ npms=(
   coffee-script
   fenix-cli
   gitjk
+  wifi-password
 )
 
 clibs=(
@@ -99,7 +100,6 @@ clibs=(
 )
 
 bkpgs=(
-  rauchg/wifi-password
 )
 
 git_configs=(
@@ -200,7 +200,7 @@ install 'pip install' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'clib install' ${clibs[@]}
 install 'bpkg install' ${bpkgs[@]}
-install 'npm install -g' ${npms[@]}
+install 'npm install -global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
 
