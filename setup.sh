@@ -9,6 +9,7 @@ brews=(
   dfc
   findutils
   fpp
+  fzf
   git
   git-extras
   go
