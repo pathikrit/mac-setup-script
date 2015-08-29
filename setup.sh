@@ -43,6 +43,7 @@ casks=(
   cakebrew
   chromecast
   cleanmymac
+  commander-one
   dropbox
   firefox
   google-chrome
