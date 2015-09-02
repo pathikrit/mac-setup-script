@@ -94,6 +94,7 @@ npms=(
   coffee-script
   fenix-cli
   gitjk
+  speed-test
   kill-tabs
   wifi-password
 )
