@@ -199,12 +199,12 @@ brew cask info ${casks[@]}
 proceed_prompt
 install 'brew cask install --appdir="/Applications"' ${casks[@]}
 
-# TODO: add info part of install
+# TODO: add info part of install or do reinstall?
 install 'pip install' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'clib install' ${clibs[@]}
 install 'bpkg install' ${bpkgs[@]}
-install 'npm install -global' ${npms[@]}
+install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
 
