@@ -13,6 +13,7 @@ brews=(
   git
   git-extras
   go
+  hh
   htop
   httpie
   iftop
@@ -20,8 +21,8 @@ brews=(
   macvim
   mtr
   ncdu
-  node
   nmap
+  node
   postgresql
   pgcli
   python
