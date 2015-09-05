@@ -15,9 +15,11 @@ brews=(
   go
   htop
   httpie
+  iftop
   mackup
   macvim
   mtr
+  ncdu
   node
   nmap
   postgresql
@@ -81,7 +83,7 @@ casks=(
 )
 
 pips=(
-  Glances
+  glances
   pythonpy
 )
 
