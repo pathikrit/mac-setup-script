@@ -211,14 +211,18 @@ install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
 
+echo "Installing ruby ..."
+curl -sSL https://get.rvm.io | bash -s stable
+rvm autolibs homebrew
+rvm requirements
+
 echo "Upgrading bash ..."
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 
 echo "Setting up zsh ..."
 curl -L http://install.ohmyz.sh | sh
 chsh -s $(which zsh)
-# TODO: Auto-set theme to "fino-time" in ~/.zshrc (using antigen?)
-curl -sSL https://get.rvm.io | bash -s stable  # required for some zsh-themes
+# TODO: Auto-set theme to "re5et" in ~/.zshrc (using antigen?)
 
 echo "Setting git defaults ..."
 for config in "${git_configs[@]}"
