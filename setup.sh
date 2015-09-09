@@ -153,7 +153,7 @@ if test ! $(which brew); then
 else
   echo "Updating Homebrew ..."
   brew update
-  brew upgrade brew-cask
+  brew upgrade
 fi
 brew doctor
 brew tap homebrew/dupes
@@ -194,6 +194,11 @@ brew info ${brews[@]}
 proceed_prompt
 install 'brew install' ${brews[@]}
 
+echo "Installing rvm ..."
+curl -sSL https://get.rvm.io | bash -s stable
+rvm autolibs homebrew
+rvm requirements
+
 echo "Tapping casks ..."
 brew tap caskroom/fonts
 brew tap caskroom/versions
@@ -210,11 +215,6 @@ install 'bpkg install' ${bpkgs[@]}
 install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
-
-echo "Installing ruby ..."
-curl -sSL https://get.rvm.io | bash -s stable
-rvm autolibs homebrew
-rvm requirements
 
 echo "Upgrading bash ..."
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
