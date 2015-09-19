@@ -52,6 +52,7 @@ casks=(
   google-chrome
   google-drive
   github
+  gitter
   hosts
   handbrake
   intellij-idea
