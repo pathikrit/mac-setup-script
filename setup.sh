@@ -58,6 +58,7 @@ casks=(
   intellij-idea
   istat-menus
   istat-server
+  licecap
   iterm2
   qlcolorcode
   qlmarkdown
