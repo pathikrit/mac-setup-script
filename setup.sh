@@ -232,6 +232,11 @@ do
   git config --global ${config}
 done
 
+echo "Setting up go ..."
+mkdir -p /usr/libs/go
+echo "export GOPATH=/usr/libs/go" >> ~/.zshrc
+echo "export PATH=$PATH:$GOPATH/bin" >> ~/.zshrc
+
 echo "Upgrading ..."
 pip install --upgrade setuptools
 pip install --upgrade pip
