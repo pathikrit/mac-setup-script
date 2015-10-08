@@ -30,6 +30,7 @@ brews=(
   ruby
   scala
   sbt
+  thefuck
   tmux
   trash
   tree
