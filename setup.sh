@@ -48,6 +48,7 @@ casks=(
   chromecast
   cleanmymac
   commander-one
+  dockertoolbox
   dropbox
   firefox
   google-chrome
