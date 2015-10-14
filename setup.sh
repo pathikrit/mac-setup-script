@@ -89,6 +89,7 @@ casks=(
 
 pips=(
   glances
+  ohmu
   pythonpy
 )
 
@@ -212,7 +213,7 @@ proceed_prompt
 install 'brew cask install --appdir="/Applications"' ${casks[@]}
 
 # TODO: add info part of install or do reinstall?
-install 'pip install' ${pips[@]}
+install 'pip install --upgrade' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'clib install' ${clibs[@]}
 install 'bpkg install' ${bpkgs[@]}
