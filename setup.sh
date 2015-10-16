@@ -13,6 +13,7 @@ brews=(
   git
   git-extras
   go
+  gpg
   hh
   htop
   httpie
