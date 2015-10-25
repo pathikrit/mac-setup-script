@@ -29,6 +29,8 @@ brews=(
   python
   python3
   ruby
+  rbenv
+  ruby-build
   scala
   sbt
   thefuck
@@ -200,10 +202,14 @@ brew info ${brews[@]}
 proceed_prompt
 install 'brew install' ${brews[@]}
 
-echo "Installing rvm ..."
+echo "Upgrading ruby ..."
 curl -sSL https://get.rvm.io | bash -s stable
 rvm autolibs homebrew
 rvm requirements
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.zshrc
+rbenv install 2.2.3
+rbenv global 2.2.3
+ruby -v
 
 echo "Tapping casks ..."
 brew tap caskroom/fonts
