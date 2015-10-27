@@ -121,6 +121,7 @@ git_configs=(
   "rerere.enabled true"
   "branch.autosetuprebase always"
   "credential.helper osxkeychain"
+  "rebase.autostash true"
   "user.email pathikritbhowmick@msn.com"
 )
 
