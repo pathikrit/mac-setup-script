@@ -33,6 +33,7 @@ brews=(
   ruby-build
   scala
   sbt
+  stormssh
   thefuck
   tmux
   trash
