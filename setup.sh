@@ -4,6 +4,7 @@ brews=(
   archey
   bash
   brew-cask
+  cheat
   clib
   coreutils
   dfc
