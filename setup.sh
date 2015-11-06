@@ -18,6 +18,7 @@ brews=(
   htop
   httpie
   iftop
+  lighttpd
   mackup
   macvim
   mtr
