@@ -119,10 +119,16 @@ bkpgs=(
 )
 
 git_configs=(
-  "rerere.enabled true"
-  "branch.autosetuprebase always"
+  "branch.autoSetupRebase always"
+  "core.autocrlf input"
+  "core.pager ''"
   "credential.helper osxkeychain"
+  "merge.ff false"
+  "pull.rebase true"
+  "push.default simple"
   "rebase.autostash true"
+  "rerere.autoUpdate true"
+  "rerere.enabled true"
   "user.email pathikritbhowmick@msn.com"
 )
 
