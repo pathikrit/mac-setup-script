@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 brews=(
+  android-platform-tools
   archey
   bash
   brew-cask
