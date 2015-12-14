@@ -161,7 +161,7 @@ fonts=(
 )
 
 omfs=(
-  fox
+  jacaetevha
   osx
   thefuck
 )
