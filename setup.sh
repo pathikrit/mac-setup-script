@@ -12,7 +12,6 @@ brews=(
   findutils
   fish
   fpp
-  fzf
   git
   git-extras
   go
@@ -39,7 +38,6 @@ brews=(
   sbt
   stormssh
   tmux
-  trash
   tree
   wget
 )
@@ -251,6 +249,7 @@ curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 omf install fox
 omf install osx
 omf install thefuck
+brew install fzf
 
 echo "Setting git defaults ..."
 for config in "${git_configs[@]}"
