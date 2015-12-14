@@ -38,7 +38,6 @@ brews=(
   scala
   sbt
   stormssh
-  thefuck
   tmux
   trash
   tree
@@ -249,6 +248,9 @@ echo "Setting up fish shell ..."
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+omf install fox
+omf install osx
+omf install thefuck
 
 echo "Setting git defaults ..."
 for config in "${git_configs[@]}"
