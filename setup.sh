@@ -139,9 +139,7 @@ apms=(
   atom-beautify
   autocomplete-plus
   circle-ci
-  markdown-preview
-  minimap
-  nuclide-installer
+  ensime
   language-coffee-script
   language-gfm
   language-html
@@ -154,6 +152,9 @@ apms=(
   language-sql
   language-xml
   language-yaml
+  markdown-preview
+  minimap
+  nuclide-installer
 )
 
 fonts=(
