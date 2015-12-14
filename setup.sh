@@ -160,6 +160,12 @@ fonts=(
   font-source-code-pro
 )
 
+omfs=(
+  fox
+  osx
+  thefuck
+)
+
 ######################################## End of app list ########################################
 set +e
 
@@ -217,6 +223,7 @@ echo "Upgrading ruby ..."
 curl -sSL https://get.rvm.io | bash -s stable
 rvm autolibs homebrew
 rvm requirements
+mkdir -p ~/.config/fish/
 echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.config/fish/config.fish
 rbenv install 2.2.3
 rbenv global 2.2.3
@@ -246,9 +253,7 @@ echo "Setting up fish shell ..."
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-omf install fox
-omf install osx
-omf install thefuck
+install 'omf install' ${omfs[@]}
 brew install fzf
 
 echo "Setting git defaults ..."
