@@ -10,6 +10,7 @@ brews=(
   coreutils
   dfc
   findutils
+  fish
   fpp
   fzf
   git
@@ -42,7 +43,6 @@ brews=(
   trash
   tree
   wget
-  zsh
 )
 
 casks=(
@@ -220,7 +220,7 @@ echo "Upgrading ruby ..."
 curl -sSL https://get.rvm.io | bash -s stable
 rvm autolibs homebrew
 rvm requirements
-echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.zshrc
+echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.config/fish/config.fish
 rbenv install 2.2.3
 rbenv global 2.2.3
 ruby -v
@@ -245,10 +245,10 @@ install 'brew cask install' ${fonts[@]}
 echo "Upgrading bash ..."
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 
-echo "Setting up zsh ..."
-curl -L http://install.ohmyz.sh | sh
-chsh -s $(which zsh)
-# TODO: Auto-set theme to "re5et" in ~/.zshrc (using antigen?)
+echo "Setting up fish shell ..."
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 
 echo "Setting git defaults ..."
 for config in "${git_configs[@]}"
@@ -258,8 +258,8 @@ done
 
 echo "Setting up go ..."
 mkdir -p /usr/libs/go
-echo "export GOPATH=/usr/libs/go" >> ~/.zshrc
-echo "export PATH=$PATH:$GOPATH/bin" >> ~/.zshrc
+echo "export GOPATH=/usr/libs/go" >> ~/.config/fish/config.fish
+echo "export PATH=$PATH:$GOPATH/bin" >> ~/.config/fish/config.fish
 
 echo "Upgrading ..."
 pip install --upgrade setuptools
