@@ -123,6 +123,7 @@ bkpgs=(
 
 git_configs=(
   "branch.autoSetupRebase always"
+  "color.ui auto"
   "core.autocrlf input"
   "core.pager ''"
   "credential.helper osxkeychain"
@@ -132,6 +133,7 @@ git_configs=(
   "rebase.autostash true"
   "rerere.autoUpdate true"
   "rerere.enabled true"
+  "user.name pathikrit"
   "user.email pathikritbhowmick@msn.com"
 )
 
