@@ -89,7 +89,8 @@ casks=(
   transmission-remote-gui
   tunnelbear
   vlc
-  zeroxdbe-eap
+  webstorm
+  0xdbe-eap
 )
 
 pips=(
