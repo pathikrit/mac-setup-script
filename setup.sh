@@ -53,6 +53,7 @@ casks=(
   chromecast
   cleanmymac
   commander-one
+  datagrip
   dockertoolbox
   dropbox
   firefox
@@ -90,7 +91,6 @@ casks=(
   tunnelbear
   vlc
   webstorm
-  0xdbe-eap
 )
 
 pips=(
