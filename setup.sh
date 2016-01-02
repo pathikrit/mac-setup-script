@@ -31,9 +31,6 @@ brews=(
   pgcli
   python
   python3
-  ruby
-  rbenv
-  ruby-build
   scala
   sbt
   stormssh
@@ -229,14 +226,9 @@ brew info ${brews[@]}
 proceed_prompt
 install 'brew install' ${brews[@]}
 
-echo "Upgrading ruby ..."
-curl -sSL https://get.rvm.io | bash -s stable
-rvm autolibs homebrew
-rvm requirements
-mkdir -p ~/.config/fish/
-echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.config/fish/config.fish
-rbenv install 2.2.3
-rbenv global 2.2.3
+echo "Installing ruby ..."
+brew install ruby-install chruby
+ruby-install ruby
 ruby -v
 
 echo "Tapping casks ..."
