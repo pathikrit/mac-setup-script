@@ -222,14 +222,16 @@ chsh -s $(which fish)
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
 install 'omf install' ${omfs[@]}
 
+echo "Installing ruby ..."
+brew install ruby-install chruby chruby-fish
+ruby-install ruby
+echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
+echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
+ruby -v
+
 brew info ${brews[@]}
 proceed_prompt
 install 'brew install' ${brews[@]}
-
-echo "Installing ruby ..."
-brew install ruby-install chruby
-ruby-install ruby
-ruby -v
 
 echo "Tapping casks ..."
 brew tap caskroom/fonts
