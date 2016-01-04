@@ -21,6 +21,7 @@ brews=(
   httpie
   iftop
   lighttpd
+  lnav
   mackup
   macvim
   mtr
