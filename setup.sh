@@ -259,6 +259,8 @@ for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
+git alias up '! git stash && git pull --rebase && git push && git stash pop'
+git alias down '! git stash && git pull --rebase && git stash pop'
 
 echo "Setting up go ..."
 mkdir -p /usr/libs/go
