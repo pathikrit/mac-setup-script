@@ -28,6 +28,7 @@ brews=(
   ncdu
   nmap
   node
+  poppler
   postgresql
   pgcli
   python
