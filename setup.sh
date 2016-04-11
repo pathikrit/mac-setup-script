@@ -36,6 +36,7 @@ brews=(
   scala
   sbt
   stormssh
+  thefuck
   tmux
   tree
   trash
@@ -217,16 +218,10 @@ function proceed_prompt {
   fi
 }
 
-echo "Setting up fish shell ..."
-brew install fish
-echo $(which fish) | sudo tee -a /etc/shells
-chsh -s $(which fish)
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-install 'omf install' ${omfs[@]}
-
 echo "Installing ruby ..."
-brew install ruby-install chruby chruby-fish
+brew install ruby-install chruby
 ruby-install ruby
+mkdir -p ~/.config/fish/
 echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
 echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
 ruby -v
@@ -286,3 +281,12 @@ echo "Run `mackup restore` after DropBox has done syncing"
 
 read -p "Hit enter to run [OSX for Hackers] script..." c
 sh -c "$(curl -sL https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh)"
+
+echo "Setting up fish shell ..."
+brew install fish chruby-fish
+echo $(which fish) | sudo tee -a /etc/shells
+chsh -s $(which fish)
+curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+install 'omf install' ${omfs[@]}
+
+echo "Done!"
