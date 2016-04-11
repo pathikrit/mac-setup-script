@@ -98,7 +98,6 @@ pips=(
 )
 
 gems=(
-  git-up
   bundle
 )
 
@@ -209,6 +208,7 @@ ruby-install ruby
 mkdir -p ~/.config/fish/
 echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
 echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
+chruby ruby-2.3.0
 ruby -v
 
 echo "Installing Java ..."
