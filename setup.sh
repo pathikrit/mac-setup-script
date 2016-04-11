@@ -275,6 +275,9 @@ brew install fish chruby-fish
 echo $(which fish) | sudo tee -a /etc/shells
 chsh -s $(which fish)
 curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-install 'omf install' ${omfs[@]}
+for omf in ${omfs[@]}
+do
+  fish -c "omf install ${omf}"
+done
 
 echo "Done!"
