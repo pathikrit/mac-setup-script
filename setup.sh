@@ -59,8 +59,7 @@ casks=(
   firefox
   google-chrome
   google-drive
-  github
-  gitter
+  github-desktop
   hosts
   handbrake
   intellij-idea
@@ -110,6 +109,7 @@ npms=(
   gitjk
   kill-tabs
   n
+  nuclide-installer
   speed-test
   wifi-password
 )
@@ -139,24 +139,10 @@ git_configs=(
 
 apms=(
   atom-beautify
-  autocomplete-plus
   circle-ci
   ensime
-  language-coffee-script
-  language-gfm
-  language-html
-  language-java
-  language-javascript
-  language-json
-  language-python
   language-scala
-  language-shellscript
-  language-sql
-  language-xml
-  language-yaml
-  markdown-preview
   minimap
-  nuclide-installer
 )
 
 fonts=(
@@ -236,7 +222,7 @@ brew tap caskroom/versions
 
 brew cask info ${casks[@]}
 proceed_prompt
-install 'brew cask install --appdir="/Applications"' ${casks[@]}
+install 'brew cask install --appdir=/Applications' ${casks[@]}
 
 # TODO: add info part of install or do reinstall?
 install 'pip install --upgrade' ${pips[@]}
