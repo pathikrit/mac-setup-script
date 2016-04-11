@@ -72,7 +72,6 @@ casks=(
   qlstephen
   quicklook-json
   quicklook-csv
-  java
   launchrocket
   microsoft-office
   plex-home-theater
@@ -211,6 +210,9 @@ mkdir -p ~/.config/fish/
 echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
 echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
 ruby -v
+
+echo "Installing Java ..."
+brew cask install java
 
 brew info ${brews[@]}
 proceed_prompt
