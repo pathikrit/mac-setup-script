@@ -243,7 +243,9 @@ for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
-git alias rpush '! git up && git push'
+gpg_key='3E219504'
+gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+git config --global user.signingkey ${gpg_key}
 
 echo "Setting up go ..."
 mkdir -p /usr/libs/go
