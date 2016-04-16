@@ -139,6 +139,7 @@ apms=(
   atom-beautify
   circle-ci
   ensime
+  intellij-idea-keymap
   language-scala
   minimap
 )
