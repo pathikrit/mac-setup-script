@@ -88,6 +88,7 @@ casks=(
   transmission-remote-gui
   tunnelbear
   vlc
+  volumemixer
   webstorm
 )
 
