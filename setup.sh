@@ -57,6 +57,7 @@ casks=(
   dockertoolbox
   dropbox
   firefox
+  franz
   google-chrome
   google-drive
   github-desktop
