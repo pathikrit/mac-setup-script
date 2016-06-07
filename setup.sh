@@ -238,6 +238,8 @@ install 'brew cask install' ${fonts[@]}
 
 echo "Upgrading bash ..."
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
+cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
+source ~/.bash_profile
 
 echo "Setting git defaults ..."
 for config in "${git_configs[@]}"
