@@ -20,6 +20,7 @@ brews=(
   htop
   httpie
   iftop
+  imagemagick
   lighttpd
   lnav
   mackup
