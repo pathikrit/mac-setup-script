@@ -275,19 +275,19 @@ echo "Run `mackup restore` after DropBox has done syncing"
 read -p "Hit enter to run [OSX for Hackers] script..." c
 sh -c "$(curl -sL https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh)"
 
-echo "Setting up fish shell ..."
-brew install fish chruby-fish
-echo $(which fish) | sudo tee -a /etc/shells
-mkdir -p ~/.config/fish/
-echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
-echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
-echo "export GOPATH=/usr/libs/go" >> ~/.config/fish/config.fish
-echo "export PATH=$PATH:$GOPATH/bin" >> ~/.config/fish/config.fish
-chsh -s $(which fish)
-curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-for omf in ${omfs[@]}
-do
-  fish -c "omf install ${omf}"
-done
+#echo "Setting up fish shell ..."
+#brew install fish chruby-fish
+#echo $(which fish) | sudo tee -a /etc/shells
+#mkdir -p ~/.config/fish/
+#echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
+#echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
+#echo "export GOPATH=/usr/libs/go" >> ~/.config/fish/config.fish
+#echo "export PATH=$PATH:$GOPATH/bin" >> ~/.config/fish/config.fish
+#chsh -s $(which fish)
+#curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
+#for omf in ${omfs[@]}
+#do
+#  fish -c "omf install ${omf}"
+#done
 
 echo "Done!"
