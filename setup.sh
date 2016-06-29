@@ -137,6 +137,7 @@ git_configs=(
   "user.name pathikrit"
   "user.email pathikritbhowmick@msn.com"
 )
+gpg_key='3E219504'
 
 apms=(
   atom-beautify
@@ -159,6 +160,7 @@ omfs=(
 
 ######################################## End of app list ########################################
 set +e
+set -x
 
 if test ! $(which brew); then
   echo "Installing Xcode ..."
@@ -207,6 +209,7 @@ ruby -v
 echo "Installing Java ..."
 brew cask install java
 
+echo "Installing packages ..."
 brew info ${brews[@]}
 install 'brew install' ${brews[@]}
 
@@ -214,9 +217,11 @@ echo "Tapping casks ..."
 brew tap caskroom/fonts
 brew tap caskroom/versions
 
+echo "Installing software ..."
 brew cask info ${casks[@]}
 install 'brew cask install --appdir=/Applications' ${casks[@]}
 
+echo "Installing secondary packages ..."
 # TODO: add info part of install or do reinstall?
 install 'pip install --upgrade' ${pips[@]}
 install 'gem install' ${gems[@]}
@@ -236,7 +241,6 @@ for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
-gpg_key='3E219504'
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 git config --global user.signingkey ${gpg_key}
 
