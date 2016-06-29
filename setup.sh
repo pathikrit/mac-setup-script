@@ -198,14 +198,6 @@ function install {
   done
 }
 
-function proceed_prompt {
-  read -p "Proceed with installation? " -n 1 -r
-  if [[ $REPLY =~ ^[Nn]$ ]]
-  then
-    exit 1
-  fi
-}
-
 echo "Installing ruby ..."
 brew install ruby-install chruby
 ruby-install ruby
@@ -216,7 +208,6 @@ echo "Installing Java ..."
 brew cask install java
 
 brew info ${brews[@]}
-proceed_prompt
 install 'brew install' ${brews[@]}
 
 echo "Tapping casks ..."
@@ -224,7 +215,6 @@ brew tap caskroom/fonts
 brew tap caskroom/versions
 
 brew cask info ${casks[@]}
-proceed_prompt
 install 'brew cask install --appdir=/Applications' ${casks[@]}
 
 # TODO: add info part of install or do reinstall?
