@@ -10,6 +10,7 @@ brews=(
   coreutils
   dfc
   findutils
+  fontconfig --universal
   fpp
   fzf
   git
