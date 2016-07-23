@@ -92,6 +92,7 @@ casks=(
   vlc
   volumemixer
   webstorm
+  xquartz
 )
 
 pips=(
