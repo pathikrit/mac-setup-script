@@ -3,6 +3,7 @@
 brews=(
   android-platform-tools
   archey
+  aws-shell
   bash
   brew-cask
   cheat
