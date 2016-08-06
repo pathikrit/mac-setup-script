@@ -26,6 +26,7 @@ brews=(
   imagemagick
   lighttpd
   lnav
+  lumen
   mackup
   macvim
   mtr
