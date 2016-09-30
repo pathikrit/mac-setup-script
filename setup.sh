@@ -16,6 +16,7 @@ brews=(
   fzf
   git
   git-extras
+  git-lfs
   gnuplot --with-qt
   go
   gpg
