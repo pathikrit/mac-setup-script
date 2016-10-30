@@ -30,6 +30,7 @@ brews=(
   lumen
   mackup
   macvim
+  mas
   mtr
   ncdu
   nmap
