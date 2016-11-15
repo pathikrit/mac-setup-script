@@ -205,7 +205,8 @@ function install {
 echo "Installing ruby ..."
 brew install ruby-install chruby
 ruby-install ruby
-chruby ruby-2.3.1
+# TODO: enable auto switch here by following instructions
+echo "ruby-2.3.1" > ~/.ruby-version
 ruby -v
 
 echo "Installing Java ..."
