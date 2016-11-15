@@ -57,7 +57,7 @@ casks=(
   cleanmymac
   commander-one
   datagrip
-  dockertoolbox
+  docker
   dropbox
   firefox
   google-chrome
