@@ -29,6 +29,7 @@ brews=(
   mackup
   macvim
   mas
+  micro
   mtr
   ncdu
   nmap
@@ -270,9 +271,6 @@ do
 done
 
 echo "Run `mackup restore` after DropBox has done syncing"
-
-read -p "Hit enter to run [OSX for Hackers] script..." c
-sh -c "$(curl -sL https://gist.githubusercontent.com/brandonb927/3195465/raw/osx-for-hackers.sh)"
 
 #echo "Setting up fish shell ..."
 #brew install fish chruby-fish
