@@ -4,8 +4,6 @@ brews=(
   android-platform-tools
   archey
   aws-shell
-  bash
-  brew-cask
   cheat
   clib
   coreutils
@@ -34,7 +32,7 @@ brews=(
   mtr
   ncdu
   nmap
-  node
+  node --with-full-icu
   poppler
   postgresql
   pgcli
@@ -57,14 +55,12 @@ casks=(
   atom
   betterzipql
   cakebrew
-  chromecast
   cleanmymac
   commander-one
   datagrip
   dockertoolbox
   dropbox
   firefox
-  franz
   google-chrome
   google-drive
   github-desktop
@@ -74,6 +70,7 @@ casks=(
   istat-menus
   istat-server
   licecap
+  lumen
   iterm2
   qlcolorcode
   qlmarkdown
@@ -102,6 +99,7 @@ casks=(
 )
 
 pips=(
+  pip
   glances
   ohmu
   pythonpy
@@ -112,14 +110,12 @@ gems=(
 )
 
 npms=(
-  coffee-script
   fenix-cli
   gitjk
   kill-tabs
   n
   nuclide-installer
   speed-test
-  wifi-password
 )
 
 clibs=(
@@ -226,7 +222,7 @@ brew tap caskroom/versions
 
 echo "Installing software ..."
 brew cask info ${casks[@]}
-install 'brew cask install --appdir=/Applications' ${casks[@]}
+install 'brew cask install' ${casks[@]}
 
 echo "Installing secondary packages ..."
 # TODO: add info part of install or do reinstall?
@@ -250,6 +246,9 @@ do
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 git config --global user.signingkey ${gpg_key}
+
+echo "Installing mac CLI ..."
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
 
 echo "Setting up go ..."
 mkdir -p /usr/libs/go
