@@ -51,7 +51,6 @@ brews=(
 casks=(
   adobe-reader
   airdroid
-  asepsis
   atom
   betterzipql
   cakebrew
@@ -115,7 +114,6 @@ npms=(
   kill-tabs
   n
   nuclide-installer
-  speed-test
 )
 
 clibs=(
@@ -206,7 +204,7 @@ function install {
 echo "Installing ruby ..."
 brew install ruby-install chruby
 ruby-install ruby
-chruby ruby-2.3.0
+chruby ruby-2.3.1
 ruby -v
 
 echo "Installing Java ..."
@@ -255,10 +253,11 @@ mkdir -p /usr/libs/go
 echo "export GOPATH=/usr/libs/go" >> ~/.bashrc
 echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
 
-echo "Upgrading ..."
+echo "Updating ..."
 pip install --upgrade setuptools
 pip install --upgrade pip
 gem update --system
+mac update
 
 echo "Cleaning up ..."
 brew cleanup
