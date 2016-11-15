@@ -233,7 +233,11 @@ install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
 
 echo "Upgrading bash ..."
+brew install bash
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
+mv ~/.bash_profile ~/.bash_profile_backup
+mv ~/.bashrc ~/.bashrc_backup
+mv ~/.gitconfig ~/.gitconfig_backup
 cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
 source ~/.bash_profile
 
