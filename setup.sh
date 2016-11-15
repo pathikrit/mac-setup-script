@@ -123,6 +123,7 @@ clibs=(
 bkpgs=(
 )
 
+gpg_key='3E219504'
 git_configs=(
   "branch.autoSetupRebase always"
   "color.ui auto"
@@ -137,8 +138,8 @@ git_configs=(
   "rerere.enabled true"
   "user.name pathikrit"
   "user.email pathikritbhowmick@msn.com"
+  "user.signingkey ${gpg_key}"
 )
-gpg_key='3E219504'
 
 apms=(
   atom-beautify
@@ -247,15 +248,9 @@ do
   git config --global ${config}
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-git config --global user.signingkey ${gpg_key}
 
 echo "Installing mac CLI ..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
-
-echo "Setting up go ..."
-mkdir -p /usr/libs/go
-echo "export GOPATH=/usr/libs/go" >> ~/.bashrc
-echo "export PATH=$PATH:$GOPATH/bin" >> ~/.bashrc
 
 echo "Updating ..."
 pip install --upgrade setuptools
