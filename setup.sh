@@ -61,6 +61,7 @@ casks=(
   docker
   dropbox
   firefox
+  geekbench
   google-chrome
   google-drive
   github-desktop
@@ -68,7 +69,8 @@ casks=(
   handbrake
   intellij-idea
   istat-menus
-  istat-server
+  istat-server  
+  launchrocket
   licecap
   lumen
   iterm2
@@ -77,7 +79,6 @@ casks=(
   qlstephen
   quicklook-json
   quicklook-csv
-  launchrocket
   microsoft-office
   plex-home-theater
   plex-media-server
