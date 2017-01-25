@@ -87,7 +87,7 @@ casks=(
   sidekick
   skype
   slack
-  slingplayer-desktop
+  sling
   spotify
   steam
   teleport
