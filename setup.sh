@@ -79,6 +79,7 @@ casks=(
   qlstephen
   quicklook-json
   quicklook-csv
+  macdown
   microsoft-office
   plex-home-theater
   plex-media-server
