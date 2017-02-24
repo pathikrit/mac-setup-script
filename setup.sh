@@ -39,6 +39,7 @@ brews=(
   pgcli
   python
   python3
+  osquery
   scala
   sbt
   stormssh
