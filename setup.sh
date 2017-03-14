@@ -15,18 +15,20 @@ brews=(
   git-extras
   git-lfs
   gnuplot --with-qt
+  gnu-sed --with-default-names
   go
   hh
   htop
   httpie
   iftop
-  imagemagick
+  imagemagick --with-webp
   lighttpd
   lnav
   mackup
   macvim
   mas
   micro
+  moreutils
   mtr
   ncdu
   nmap
@@ -34,6 +36,7 @@ brews=(
   poppler
   postgresql
   pgcli
+  pv
   python
   python3
   osquery
@@ -44,7 +47,8 @@ brews=(
   tmux
   tree
   trash
-  wget
+  vim --with-override-system-vi
+  wget --with-iri
 )
 
 casks=(
