@@ -5,7 +5,6 @@ brews=(
   archey
   aws-shell
   cheat
-  clib
   coreutils
   dfc             # disk viz
   findutils
@@ -118,13 +117,6 @@ npms=(
   nuclide-installer
 )
 
-clibs=(
-  bpkg/bpkg
-)
-
-bkpgs=(
-)
-
 gpg_key='3E219504'
 git_configs=(
   "branch.autoSetupRebase always"
@@ -225,11 +217,8 @@ brew cask info ${casks[@]}
 install 'brew cask install' ${casks[@]}
 
 echo "Installing secondary packages ..."
-# TODO: add info part of install or do reinstall?
 install 'pip install --upgrade' ${pips[@]}
 install 'gem install' ${gems[@]}
-install 'clib install' ${clibs[@]}
-install 'bpkg install' ${bpkgs[@]}
 install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
@@ -262,11 +251,5 @@ echo "Cleaning up ..."
 brew cleanup
 brew cask cleanup
 
-for fail in ${fails[@]}
-do
-  echo "Failed to install: $fail"
-done
-
 echo "Run `mackup restore` after DropBox has done syncing"
-
 echo "Done!"
