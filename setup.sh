@@ -152,16 +152,18 @@ fonts=(
 set +e
 set -x
 
-if test ! $(which brew); then
-  echo "Installing Xcode ..."
-  xcode-select --install
-  
-  read -p "Hit enter to continue installing Homebrew ..."
+function prompt {
+  read -p "Hit Enter to $1 ..."
+}
 
-  echo "Installing Homebrew ..."
+if test ! $(which brew); then
+  prompt "Install Xcode"
+  xcode-select --install
+
+  prompt "Install Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  echo "Updating Homebrew ..."
+  prompt "Update Homebrew"
   brew update
   brew upgrade
 fi
@@ -174,16 +176,16 @@ function install {
   for pkg in $@;
   do
     exec="$cmd $pkg"
-    echo "Executing: $exec"
-    if $exec ; then
-      read -p "Installed $pkg. Hit enter to continue ..."
+    prompt "Execute: $exec"
+    if ${exec} ; then
+      echo "Installed $pkg"
     else
-      read -p "Failed to execute: $exec. Hit enter to continue ..."
+      echo "Failed to execute: $exec"
     fi
   done
 }
 
-echo "Updating ruby ..."
+prompt "Update ruby"
 ruby -v
 brew install gpg
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
@@ -194,53 +196,50 @@ rvm use ${ruby_version} --default
 ruby -v
 sudo gem update --system
 
-echo "Installing Java ..."
+prompt "Install Java"
 brew cask install java
 
-echo "Installing packages ..."
+prompt "Install packages"
 brew info ${brews[@]}
 install 'brew install' ${brews[@]}
 
-echo "Tapping casks ..."
+prompt "Install software"
 brew tap caskroom/fonts
 brew tap caskroom/versions
-
-echo "Installing software ..."
 brew cask info ${casks[@]}
 install 'brew cask install' ${casks[@]}
 
-echo "Installing secondary packages ..."
+prompt "Installing secondary packages"
 install 'pip install --upgrade' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'brew cask install' ${fonts[@]}
 
-echo "Upgrading bash ..."
+prompt "Upgrade bash"
 brew install bash
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 mv ~/.bash_profile ~/.bash_profile_backup
 mv ~/.bashrc ~/.bashrc_backup
 mv ~/.gitconfig ~/.gitconfig_backup
 cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
-source ~/.bash_profile
+#source ~/.bash_profile
 
-echo "Setting git defaults ..."
+prompt "Set git defaults"
 for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 
-echo "Installing mac CLI ..."
-# Note: Say NO to bash-completions since we have fzf!
+prompt "Install mac CLI [NOTE: Say NO to bash-completions since we have fzf]!"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
 
-echo "Updating ..."
+prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
 mac update
 
-echo "Cleaning up ..."
+echo "Finalize"
 brew cleanup
 brew cask cleanup
 
