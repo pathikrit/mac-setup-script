@@ -156,12 +156,6 @@ fonts=(
   font-source-code-pro
 )
 
-omfs=(
-  jacaetevha
-  osx
-  thefuck
-)
-
 ######################################## End of app list ########################################
 set +e
 set -x
@@ -274,18 +268,5 @@ do
 done
 
 echo "Run `mackup restore` after DropBox has done syncing"
-
-#echo "Setting up fish shell ..."
-#brew install fish chruby-fish
-#echo $(which fish) | sudo tee -a /etc/shells
-#mkdir -p ~/.config/fish/
-#echo "source /usr/local/share/chruby/chruby.fish" >> ~/.config/fish/config.fish
-#echo "source /usr/local/share/chruby/auto.fish" >> ~/.config/fish/config.fish
-#chsh -s $(which fish)
-#curl -L https://github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish
-#for omf in ${omfs[@]}
-#do
-#  fish -c "omf install ${omf}"
-#done
 
 echo "Done!"
