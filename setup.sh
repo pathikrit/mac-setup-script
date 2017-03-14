@@ -92,6 +92,7 @@ casks=(
   transmission
   transmission-remote-gui
   tunnelbear
+  visual-studio-code
   vlc
   volumemixer
   webstorm
@@ -142,6 +143,15 @@ apms=(
   intellij-idea-keymap
   language-scala
   minimap
+)
+
+vscode=(
+  donjayamanne.python
+  dragos.scala-lsp
+  lukehoban.Go
+  ms-vscode.cpptools
+  rebornix.Ruby
+  redhat.java
 )
 
 fonts=(
@@ -214,6 +224,7 @@ install 'pip install --upgrade' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
+install 'code --install-extension' ${vscode[@]}
 install 'brew cask install' ${fonts[@]}
 
 prompt "Upgrade bash"
