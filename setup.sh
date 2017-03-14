@@ -6,7 +6,7 @@ brews=(
   aws-shell
   cheat
   coreutils
-  dfc             # disk viz
+  dfc
   findutils
   fontconfig --universal
   fpp
@@ -51,7 +51,6 @@ casks=(
   adobe-reader
   airdroid
   atom
-  betterzipql
   cakebrew
   cleanmymac
   commander-one
@@ -71,6 +70,7 @@ casks=(
   launchrocket
   licecap
   iterm2
+  betterzipql
   qlcolorcode
   qlmarkdown
   qlstephen
@@ -214,7 +214,6 @@ brew info ${brews[@]}
 install 'brew install' ${brews[@]}
 
 prompt "Install software"
-brew tap caskroom/fonts
 brew tap caskroom/versions
 brew cask info ${casks[@]}
 install 'brew cask install' ${casks[@]}
@@ -225,6 +224,7 @@ install 'gem install' ${gems[@]}
 install 'npm install --global' ${npms[@]}
 install 'apm install' ${apms[@]}
 install 'code --install-extension' ${vscode[@]}
+brew tap caskroom/fonts
 install 'brew cask install' ${fonts[@]}
 
 prompt "Upgrade bash"
@@ -250,9 +250,9 @@ prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
 mac update
 
-echo "Finalize"
+prompt "Cleanup"
 brew cleanup
 brew cask cleanup
 
-echo "Run `mackup restore` after DropBox has done syncing"
+read -p "Run `mackup restore` after DropBox has done syncing ..."
 echo "Done!"
