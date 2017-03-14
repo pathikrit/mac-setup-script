@@ -155,6 +155,8 @@ set -x
 if test ! $(which brew); then
   echo "Installing Xcode ..."
   xcode-select --install
+  
+  read -p "Hit enter to continue installing Homebrew ..."
 
   echo "Installing Homebrew ..."
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -166,14 +168,6 @@ fi
 brew doctor
 brew tap homebrew/dupes
 
-fails=()
-
-function print_red {
-  red='\x1B[0;31m'
-  NC='\x1B[0m' # no color
-  echo -e "${red}$1${NC}"
-}
-
 function install {
   cmd=$1
   shift
@@ -182,15 +176,14 @@ function install {
     exec="$cmd $pkg"
     echo "Executing: $exec"
     if $exec ; then
-      echo "Installed $pkg"
+      read -p "Installed $pkg. Hit enter to continue ..."
     else
-      fails+=($pkg)
-      print_red "Failed to execute: $exec"
+      read -p "Failed to execute: $exec. Hit enter to continue ..."
     fi
   done
 }
 
-echo "Installing ruby ..."
+echo "Updating ruby ..."
 ruby -v
 brew install gpg
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
