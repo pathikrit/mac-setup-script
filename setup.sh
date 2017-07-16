@@ -4,6 +4,7 @@ brews=(
   android-platform-tools
   archey
   aws-shell
+  chainsawbaby/formula/bash-snippets
   cheat
   coreutils
   dfc
