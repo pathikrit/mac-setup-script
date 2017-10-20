@@ -14,6 +14,7 @@ brews=(
   fzf
   git
   git-extras
+  git-fresh
   git-lfs
   gnuplot --with-qt
   gnu-sed --with-default-names
