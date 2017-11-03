@@ -70,12 +70,12 @@ casks=(
   github-desktop
   hosts
   handbrake
+  hyper
   intellij-idea
   istat-menus
   istat-server  
   launchrocket
   licecap
-  iterm2
   betterzipql
   qlcolorcode
   qlmarkdown
