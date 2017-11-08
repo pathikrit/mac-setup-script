@@ -13,6 +13,7 @@ brews=(
   fpp
   fzf
   git
+  bash-completion
   git-extras
   git-fresh
   git-lfs
