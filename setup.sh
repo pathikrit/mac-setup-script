@@ -57,7 +57,6 @@ brews=(
 casks=(
   adobe-reader
   airdroid
-  atom
   cakebrew
   cleanmymac
   commander-one
@@ -142,15 +141,6 @@ git_configs=(
   "user.signingkey ${gpg_key}"
 )
 
-apms=(
-  atom-beautify
-  circle-ci
-  ensime
-  intellij-idea-keymap
-  language-scala
-  minimap
-)
-
 vscode=(
   donjayamanne.python
   dragos.scala-lsp
@@ -228,7 +218,6 @@ prompt "Installing secondary packages"
 install 'pip install --upgrade' ${pips[@]}
 install 'gem install' ${gems[@]}
 install 'npm install --global' ${npms[@]}
-install 'apm install' ${apms[@]}
 install 'code --install-extension' ${vscode[@]}
 brew tap caskroom/fonts
 install 'brew cask install' ${fonts[@]}
