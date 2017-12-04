@@ -61,7 +61,6 @@ casks=(
   cakebrew
   cleanmymac
   commander-one
-  datagrip
   docker
   dropbox
   firefox
@@ -72,11 +71,11 @@ casks=(
   hosts
   handbrake
   hyper
-  intellij-idea
   istat-menus
   istat-server  
   launchrocket
   licecap
+  jetbrains-toolbox
   betterzipql
   qlcolorcode
   qlmarkdown
