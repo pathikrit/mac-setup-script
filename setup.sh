@@ -20,6 +20,7 @@ brews=(
   gnuplot --with-qt
   gnu-sed --with-default-names
   go
+  haskell-stack
   hh
   htop
   httpie
