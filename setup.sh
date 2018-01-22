@@ -71,6 +71,7 @@ casks=(
   hosts
   handbrake
   hyper
+  iina
   istat-menus
   istat-server  
   launchrocket
@@ -99,7 +100,6 @@ casks=(
   transmission-remote-gui
   tunnelbear
   visual-studio-code
-  vlc
   volumemixer
   webstorm
   xquartz
