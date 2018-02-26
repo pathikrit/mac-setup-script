@@ -85,6 +85,7 @@ casks=(
   quicklook-csv
   macdown
   microsoft-office
+  muzzle
   plex-home-theater
   plex-media-server
   private-eye
