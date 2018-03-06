@@ -77,6 +77,7 @@ casks=(
   launchrocket
   licecap
   jetbrains-toolbox
+  kap-beta
   betterzipql
   qlcolorcode
   qlmarkdown
