@@ -46,6 +46,7 @@ brews=(
   osquery
   scala
   sbt
+  shellcheck
   stormssh
   thefuck
   tmux
