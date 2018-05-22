@@ -117,6 +117,7 @@ pips=(
 
 gems=(
   bundle
+  travis
 )
 
 npms=(
