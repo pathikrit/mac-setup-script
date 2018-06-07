@@ -4,12 +4,12 @@ brews=(
   java8
   archey
   aws-shell
-  "bash-snippets --without-all-tools --with-weather"
+  bash-snippets\ --without-all-tools\ --with-weather
   cheat
   coreutils
   dfc
   findutils
-  "fontconfig --universal"
+  fontconfig\ --universal
   fpp
   fzf
   git
@@ -17,15 +17,15 @@ brews=(
   git-extras
   git-fresh
   git-lfs
-  "gnuplot --with-qt"
-  "gnu-sed --with-default-names"
+  gnuplot\ --with-qt
+  gnu-sed\ --with-default-names
   go
   haskell-stack
   hh
   htop
   httpie
   iftop
-  "imagemagick --with-webp"
+  imagemagick\ --with-webp
   lighttpd
   lnav
   mackup
@@ -53,8 +53,8 @@ brews=(
   tmux
   tree
   trash
-  "vim --with-override-system-vi"
-  "wget --with-iri"
+  vim\ --with-override-system-vi
+  wget\ --with-iri
   hosts
   volumemixer
 )
@@ -181,7 +181,7 @@ brew doctor
 function install {
   cmd=$1
   shift
-  for pkg in $@;
+  for pkg in "$@";
   do
     exec="$cmd $pkg"
     prompt "Execute: $exec"
