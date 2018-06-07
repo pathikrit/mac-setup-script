@@ -163,7 +163,9 @@ set +e
 set -x
 
 function prompt {
-  read -p "Hit Enter to $1 ..."
+  # TODO: Do not prompt in CI
+  # read -p "Hit Enter to $1 ..."
+  echo $1
 }
 
 if test ! $(which brew); then
