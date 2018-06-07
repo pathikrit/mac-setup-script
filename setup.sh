@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 brews=(
-  android-platform-tools
   archey
   aws-shell
   chainsawbaby/formula/bash-snippets
@@ -59,6 +58,7 @@ brews=(
 casks=(
   adobe-reader
   airdroid
+  android-platform-tools
   cakebrew
   cleanmymac
   commander-one
