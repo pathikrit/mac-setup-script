@@ -66,8 +66,8 @@ casks=(
   dropbox
   firefox
   geekbench
+  google-backup-and-sync
   google-chrome
-  google-drive
   github-desktop
   hosts
   handbrake
