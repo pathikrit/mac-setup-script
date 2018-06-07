@@ -162,9 +162,9 @@ set +e
 set -x
 
 function prompt {
-  # TODO: Do not prompt in CI
-  # read -p "Hit Enter to $1 ..."
-  echo $1
+  if [[ -z "${CI}" ]]; then
+    read -p "Hit Enter to $1 ..."
+  fi
 }
 
 if test ! $(which brew); then
@@ -237,8 +237,10 @@ do
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 
-prompt "Install mac CLI [NOTE: Say NO to bash-completions since we have fzf]!"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
+if [[ -z "${CI}" ]]; then
+  prompt "Install mac CLI [NOTE: Say NO to bash-completions since we have fzf]!"
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
+fi  
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
@@ -248,5 +250,5 @@ prompt "Cleanup"
 brew cleanup
 brew cask cleanup
 
-read -p "Run `mackup restore` after DropBox has done syncing ..."
+echo "Run [mackup restore] after DropBox has done syncing ..."
 echo "Done!"
