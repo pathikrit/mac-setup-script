@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 brews=(
+  java8
   archey
   aws-shell
   "bash-snippets --without-all-tools --with-weather"
@@ -59,6 +60,7 @@ casks=(
   adobe-acrobat-reader
   airdroid
   android-platform-tools
+  awscli
   cakebrew
   cleanmymac
   commander-one
@@ -160,6 +162,7 @@ fonts=(
 ######################################## End of app list ########################################
 set +e
 set -x
+IFS=$'\n'
 
 function prompt {
   if [[ -z "${CI}" ]]; then
@@ -203,9 +206,6 @@ rvm use ${ruby_version} --default
 ruby -v
 sudo gem update --system
 
-prompt "Install Java"
-brew cask install java
-
 prompt "Install packages"
 install 'brew install' ${brews[@]}
 
@@ -228,7 +228,6 @@ mv ~/.bash_profile ~/.bash_profile_backup
 mv ~/.bashrc ~/.bashrc_backup
 mv ~/.gitconfig ~/.gitconfig_backup
 cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
-#source ~/.bash_profile
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
