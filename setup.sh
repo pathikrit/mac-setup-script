@@ -3,7 +3,7 @@
 brews=(
   archey
   aws-shell
-  chainsawbaby/formula/bash-snippets
+  "bash-snippets --without-all-tools --with-weather"
   cheat
   coreutils
   dfc
