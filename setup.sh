@@ -4,12 +4,12 @@ brews=(
   java8
   archey
   aws-shell
-  bash-snippets\ --without-all-tools\ --with-weather
+  "bash-snippets --without-all-tools --with-weather"
   cheat
   coreutils
   dfc
   findutils
-  fontconfig\ --universal
+  "fontconfig --universal"
   fpp
   fzf
   git
@@ -17,15 +17,15 @@ brews=(
   git-extras
   git-fresh
   git-lfs
-  gnuplot\ --with-qt
-  gnu-sed\ --with-default-names
+  "gnuplot --with-qt"
+  "gnu-sed --with-default-names"
   go
   haskell-stack
   hh
   htop
   httpie
   iftop
-  imagemagick\ --with-webp
+  "imagemagick --with-webp"
   lighttpd
   lnav
   mackup
@@ -53,8 +53,8 @@ brews=(
   tmux
   tree
   trash
-  vim\ --with-override-system-vi
-  wget\ --with-iri
+  "vim --with-override-system-vi"
+  "wget --with-iri"
   hosts
   volumemixer
 )
@@ -168,7 +168,7 @@ function prompt {
   fi
 }
 
-if test ! $(which brew); then
+if test ! "$(command -v brew)"; then
   prompt "Install Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
@@ -205,19 +205,19 @@ ruby -v
 sudo gem update --system
 
 prompt "Install packages"
-install 'brew install' ${brews[@]}
+install 'brew install' "${brews[@]}"
 
 prompt "Install software"
 brew tap caskroom/versions
-install 'brew cask install' ${casks[@]}
+install 'brew cask install' "${casks[@]}"
 
 prompt "Installing secondary packages"
-install 'pip install --upgrade' ${pips[@]}
-install 'gem install' ${gems[@]}
-install 'npm install --global' ${npms[@]}
-install 'code --install-extension' ${vscode[@]}
+install 'pip install --upgrade' "${pips[@]}"
+install 'gem install' "${gems[@]}"
+install 'npm install --global' "${npms[@]}"
+install 'code --install-extension' "${vscode[@]}"
 brew tap caskroom/fonts
-install 'brew cask install' ${fonts[@]}
+install 'brew cask install' "${fonts[@]}"
 
 prompt "Upgrade bash"
 brew install bash
@@ -225,12 +225,12 @@ sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 mv ~/.bash_profile ~/.bash_profile_backup
 mv ~/.bashrc ~/.bashrc_backup
 mv ~/.gitconfig ~/.gitconfig_backup
-cd; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
+cd || exit; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
 do
-  git config --global ${config}
+  git config --global "${config}"
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 
