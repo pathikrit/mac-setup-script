@@ -168,9 +168,6 @@ function prompt {
 }
 
 if test ! $(which brew); then
-  prompt "Install Xcode"
-  xcode-select --install
-
   prompt "Install Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
@@ -179,7 +176,6 @@ else
   brew upgrade
 fi
 brew doctor
-brew tap homebrew/dupes
 
 function install {
   cmd=$1
