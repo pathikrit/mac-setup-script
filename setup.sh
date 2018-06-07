@@ -8,7 +8,7 @@ brews=(
   coreutils
   dfc
   findutils
-  fontconfig --universal
+  "fontconfig --universal"
   fpp
   fzf
   git
@@ -16,15 +16,15 @@ brews=(
   git-extras
   git-fresh
   git-lfs
-  gnuplot --with-qt
-  gnu-sed --with-default-names
+  "gnuplot --with-qt"
+  "gnu-sed --with-default-names"
   go
   haskell-stack
   hh
   htop
   httpie
   iftop
-  imagemagick --with-webp
+  "imagemagick --with-webp"
   lighttpd
   lnav
   mackup
@@ -51,8 +51,8 @@ brews=(
   tmux
   tree
   trash
-  vim --with-override-system-vi
-  wget --with-iri
+  "vim --with-override-system-vi"
+  "wget --with-iri"
 )
 
 casks=(
@@ -79,7 +79,6 @@ casks=(
   licecap
   jetbrains-toolbox
   kap-beta
-  betterzipql
   qlcolorcode
   qlmarkdown
   qlstephen
