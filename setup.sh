@@ -68,7 +68,7 @@ casks=(
   geekbench
   google-backup-and-sync
   google-chrome
-  github-desktop
+  github
   hosts
   handbrake
   hyper
