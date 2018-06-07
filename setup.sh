@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 brews=(
-  java8
   archey
   aws-shell
   "bash-snippets --without-all-tools --with-weather"
@@ -81,6 +80,7 @@ casks=(
   istat-server  
   launchrocket
   licecap
+  java8
   jetbrains-toolbox
   kap-beta
   qlcolorcode
@@ -198,7 +198,7 @@ ruby -v
 brew install gpg
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
-ruby_version='2.6.0'
+ruby_version='2.5.0'
 rvm install ${ruby_version}
 rvm use ${ruby_version} --default
 ruby -v
