@@ -48,12 +48,15 @@ brews=(
   sbt
   shellcheck
   stormssh
+  teleport
   thefuck
   tmux
   tree
   trash
   "vim --with-override-system-vi"
   "wget --with-iri"
+  hosts
+  volumemixer
 )
 
 casks=(
@@ -71,7 +74,6 @@ casks=(
   google-backup-and-sync
   google-chrome
   github
-  hosts
   handbrake
   hyper
   iina
@@ -89,7 +91,7 @@ casks=(
   macdown
   microsoft-office
   muzzle
-  plex-home-theater
+  plex-media-player
   plex-media-server
   private-eye
   satellite-eyes
@@ -98,13 +100,10 @@ casks=(
   slack
   spotify
   steam
-  teleport
   transmission
   transmission-remote-gui
   tunnelbear
   visual-studio-code
-  volumemixer
-  webstorm
   xquartz
 )
 
@@ -162,7 +161,6 @@ fonts=(
 ######################################## End of app list ########################################
 set +e
 set -x
-IFS=$'\n'
 
 function prompt {
   if [[ -z "${CI}" ]]; then
