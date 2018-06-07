@@ -94,7 +94,6 @@ casks=(
   sidekick
   skype
   slack
-  sling
   spotify
   steam
   teleport
@@ -208,12 +207,10 @@ prompt "Install Java"
 brew cask install java
 
 prompt "Install packages"
-brew info ${brews[@]}
 install 'brew install' ${brews[@]}
 
 prompt "Install software"
 brew tap caskroom/versions
-brew cask info ${casks[@]}
 install 'brew cask install' ${casks[@]}
 
 prompt "Installing secondary packages"
