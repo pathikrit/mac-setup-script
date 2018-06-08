@@ -145,10 +145,10 @@ git_configs=(
 )
 
 vscode=(
-  donjayamanne.python
+  rust-lang.rust
   dragos.scala-lsp
-  lukehoban.Go
-  ms-vscode.cpptools
+  lightbend.vscode-sbt-scala
+  alanz.vscode-hie-server
   rebornix.Ruby
   redhat.java
 )
@@ -228,7 +228,7 @@ cd || exit; curl -#L https://github.com/barryclark/bashstrap/tarball/master | ta
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
 do
-  git config --global "${config}"
+  git config --global ${config}
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 
