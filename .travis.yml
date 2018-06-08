@@ -1,3 +1,4 @@
 os: osx
-before_script: sudo chown -R $(whoami) /usr/local
+language: python
+before_script: shellcheck *.sh
 script: ./setup.sh
