@@ -176,6 +176,7 @@ else
   brew upgrade
 fi
 brew doctor
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 function install {
   cmd=$1

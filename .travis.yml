@@ -1,3 +1,10 @@
 os: osx
+language: bash
+addons:
+  apt:
+    sources:
+      - debian-sid    # Grab shellcheck from the Debian repo (o_O)
+    packages:
+      - shellcheck
 before_script: shellcheck *.sh
 script: ./setup.sh
