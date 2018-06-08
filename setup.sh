@@ -61,7 +61,6 @@ casks=(
   android-platform-tools
   cakebrew
   cleanmymac
-  commander-one
   docker
   dropbox
   firefox
@@ -87,6 +86,7 @@ casks=(
   macdown
   microsoft-office
   muzzle
+  path-finder
   plex-media-player
   plex-media-server
   private-eye
