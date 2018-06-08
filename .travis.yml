@@ -1,5 +1,5 @@
 os: osx
 language: sh
 install: brew install shellcheck
-before_script: shellcheck *.sh
 script: ./setup.sh
+after_success: shellcheck *.sh

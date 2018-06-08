@@ -10,9 +10,7 @@ brews=(
   findutils
   "fontconfig --universal"
   fpp
-  fzf
   git
-  bash-completion
   git-extras
   git-fresh
   git-lfs
@@ -219,12 +217,10 @@ brew tap caskroom/fonts
 install 'brew cask install' "${fonts[@]}"
 
 prompt "Upgrade bash"
-brew install bash
+brew install bash bash-completion2 fzf
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-mv ~/.bash_profile ~/.bash_profile_backup
-mv ~/.bashrc ~/.bashrc_backup
-mv ~/.gitconfig ~/.gitconfig_backup
-cd || exit; curl -#L https://github.com/barryclark/bashstrap/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,screenshot.png}
+git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
+~/.bash_it/install.sh --silent
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
