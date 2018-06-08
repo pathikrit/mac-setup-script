@@ -2,7 +2,7 @@
 
 brews=(
   archey
-  aws-shell
+  awscli
   "bash-snippets --without-all-tools --with-weather"
   cheat
   coreutils
@@ -40,7 +40,6 @@ brews=(
   postgresql
   pgcli
   pv
-  python
   python3
   osquery
   scala
@@ -54,15 +53,14 @@ brews=(
   trash
   "vim --with-override-system-vi"
   "wget --with-iri"
-  hosts
-  volumemixer
+  #hosts
+  #volumemixer
 )
 
 casks=(
   adobe-acrobat-reader
   airdroid
   android-platform-tools
-  awscli
   cakebrew
   cleanmymac
   commander-one
@@ -114,6 +112,7 @@ pips=(
   pythonpy
 )
 
+ruby_version='2.5.0'
 gems=(
   bundle
   travis
@@ -198,7 +197,6 @@ ruby -v
 brew install gpg
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
-ruby_version='2.5.0'
 rvm install ${ruby_version}
 rvm use ${ruby_version} --default
 ruby -v
