@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -x
+
 if [[ -z "${CI}" ]]; then
   sudo -v # Ask for the administrator password upfront
   # Keep-alive: update existing `sudo` time stamp until script has finished
@@ -98,9 +100,6 @@ defaults write com.apple.dock autohide -bool true
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
-
-# Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
