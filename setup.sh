@@ -4,7 +4,7 @@ brews=(
   archey
   awscli
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
-  cheat
+  #cheat
   coreutils
   dfc
   findutils
@@ -39,6 +39,7 @@ brews=(
   postgresql
   pgcli
   pv
+  python
   python3
   osquery
   scala
@@ -74,7 +75,7 @@ casks=(
   firefox
   geekbench
   google-backup-and-sync
-  github
+  github-desktop
   handbrake
   hyper
   iina
@@ -178,6 +179,9 @@ function install {
       echo "Installed $pkg"
     else
       echo "Failed to execute: $exec"
+      if [[ ! -z "${CI}" ]]; then
+        exit 1
+      fi
     fi
   done
 }
