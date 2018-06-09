@@ -159,7 +159,7 @@ fonts=(
 
 ######################################## End of app list ########################################
 set +e
-set -x
+#set -x
 
 function prompt {
   if [[ -z "${CI}" ]]; then
