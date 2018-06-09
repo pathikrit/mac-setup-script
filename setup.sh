@@ -17,8 +17,10 @@ brews=(
   "gnuplot --with-qt"
   "gnu-sed --with-default-names"
   go
+  gpg
   haskell-stack
   hh
+  #hosts
   htop
   httpie
   iftop
@@ -42,6 +44,7 @@ brews=(
   python
   python3
   osquery
+  ruby
   scala
   sbt
   shellcheck
@@ -52,9 +55,8 @@ brews=(
   tree
   trash
   "vim --with-override-system-vi"
-  "wget --with-iri"
-  #hosts
   #volumemixer
+  "wget --with-iri"
 )
 
 casks=(
@@ -113,9 +115,8 @@ pips=(
   pythonpy
 )
 
-ruby_version='2.5.0'
 gems=(
-  bundle
+  bundler
   travis
 )
 
@@ -212,19 +213,9 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-prompt "Upgrade ruby"
-ruby -v
-brew install gpg
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable
-rvm install ${ruby_version}
-source ~/.rvm/scripts/rvm
-rvm use ${ruby_version} --default
-ruby -v
-sudo gem update --system
-
 prompt "Install packages"
 install 'brew_install_or_upgrade' "${brews[@]}"
+brew link --overwrite ruby
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
@@ -238,7 +229,7 @@ brew tap caskroom/versions
 install 'brew cask install' "${casks[@]}"
 
 prompt "Install secondary packages"
-install 'pip install --upgrade' "${pips[@]}"
+install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
