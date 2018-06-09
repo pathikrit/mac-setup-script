@@ -25,6 +25,7 @@ brews=(
   "imagemagick --with-webp"
   lighttpd
   lnav
+  m-cli
   mackup
   macvim
   mas
@@ -219,8 +220,8 @@ install 'brew cask install' "${fonts[@]}"
 prompt "Upgrade bash"
 brew install bash bash-completion2 fzf
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-git clone --depth=1 https://github.com/Bash-it/bash-it.git ~/.bash_it
-~/.bash_it/install.sh --silent
+# Install https://github.com/twolfson/sexy-bash-prompt
+(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
@@ -228,11 +229,6 @@ do
   git config --global ${config}
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-
-if [[ -z "${CI}" ]]; then
-  prompt "Install mac CLI [NOTE: Say NO to bash-completions since we have fzf]!"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
-fi  
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
