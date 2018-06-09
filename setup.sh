@@ -75,7 +75,6 @@ casks=(
   istat-menus
   istat-server  
   launchrocket
-  licecap
   java8
   jetbrains-toolbox
   kap-beta
