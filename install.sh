@@ -63,9 +63,10 @@ casks=(
   # Install some stuff before others!
   dropbox
   google-chrome
+  hyper
+  java8
   jetbrains-toolbox
   istat-menus
-  java8
   spotify
   #The rest
   adobe-acrobat-reader
@@ -79,7 +80,6 @@ casks=(
   google-backup-and-sync
   github-desktop
   handbrake
-  hyper
   iina
   istat-server  
   launchrocket
@@ -161,7 +161,7 @@ fonts=(
 
 ######################################## End of app list ########################################
 set +e
-#set -x
+set -x
 
 function prompt {
   if [[ -z "${CI}" ]]; then

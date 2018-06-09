@@ -1,5 +1,5 @@
 os: osx
 language: sh
 before_script: ./defaults.sh
-script: ./setup.sh
+script: ./install.sh
 after_success: shellcheck *.sh
