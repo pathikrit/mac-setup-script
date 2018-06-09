@@ -245,7 +245,7 @@ sudo chsh -s "$(brew --prefix)"/bin/bash
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
-m update
+m update install all 
 
 if [[ -z "${CI}" ]]; then
   prompt "Install software from App Store"
