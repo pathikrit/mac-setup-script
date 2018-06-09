@@ -182,6 +182,15 @@ function install {
   done
 }
 
+function brew_install_or_upgrade {
+  if brew ls --versions "$1" >/dev/null; then
+    echo "Upgrading already installed package $1 ..."
+    brew upgrade "$1"
+  else
+    brew install "$1"
+  fi
+}
+
 if test ! "$(command -v brew)"; then
   prompt "Install Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -207,7 +216,7 @@ ruby -v
 sudo gem update --system
 
 prompt "Install packages"
-install 'brew install' "${brews[@]}"
+install 'brew_install_or_upgrade' "${brews[@]}"
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
