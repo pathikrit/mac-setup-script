@@ -121,7 +121,6 @@ npms=(
   gitjk
   kill-tabs
   n
-  nuclide-installer
 )
 
 gpg_key='3E219504'
