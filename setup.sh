@@ -57,26 +57,29 @@ brews=(
 )
 
 casks=(
+  # Install some stuff before others!
+  dropbox
+  google-chrome
+  jetbrains-toolbox
+  istat-menus
+  java8
+  spotify
+  #The rest
   adobe-acrobat-reader
   airdroid
   android-platform-tools
   cakebrew
   cleanmymac
   docker
-  dropbox
   firefox
   geekbench
   google-backup-and-sync
-  google-chrome
   github
   handbrake
   hyper
   iina
-  istat-menus
   istat-server  
   launchrocket
-  java8
-  jetbrains-toolbox
   kap-beta
   qlcolorcode
   qlmarkdown
@@ -94,7 +97,6 @@ casks=(
   sidekick
   skype
   slack
-  spotify
   steam
   transmission
   transmission-remote-gui
@@ -151,6 +153,7 @@ vscode=(
 )
 
 fonts=(
+  font-fira-code
   font-source-code-pro
 )
 
@@ -163,17 +166,6 @@ function prompt {
     read -p "Hit Enter to $1 ..."
   fi
 }
-
-if test ! "$(command -v brew)"; then
-  prompt "Install Homebrew"
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-else
-  prompt "Update Homebrew"
-  brew update
-  brew upgrade
-fi
-brew doctor
-export HOMEBREW_NO_AUTO_UPDATE=1
 
 function install {
   cmd=$1
@@ -190,12 +182,24 @@ function install {
   done
 }
 
-prompt "Update ruby"
+if test ! "$(command -v brew)"; then
+  prompt "Install Homebrew"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+else
+  prompt "Update Homebrew"
+  brew update
+  brew upgrade
+fi
+brew doctor
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+prompt "Upgrade ruby"
 ruby -v
 brew install gpg
 gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 curl -sSL https://get.rvm.io | bash -s stable
 rvm install ${ruby_version}
+source ~/.rvm/scripts/rvm
 rvm use ${ruby_version} --default
 ruby -v
 sudo gem update --system
@@ -203,11 +207,18 @@ sudo gem update --system
 prompt "Install packages"
 install 'brew install' "${brews[@]}"
 
+prompt "Set git defaults"
+for config in "${git_configs[@]}"
+do
+  git config --global ${config}
+done
+gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+
 prompt "Install software"
 brew tap caskroom/versions
 install 'brew cask install' "${casks[@]}"
 
-prompt "Installing secondary packages"
+prompt "Install secondary packages"
 install 'pip install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
@@ -221,13 +232,6 @@ sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 sudo chsh -s $(brew --prefix)/bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
-
-prompt "Set git defaults"
-for config in "${git_configs[@]}"
-do
-  git config --global ${config}
-done
-gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
