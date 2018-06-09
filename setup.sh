@@ -186,11 +186,13 @@ if test ! "$(command -v brew)"; then
   prompt "Install Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-  prompt "Update Homebrew"
-  brew update
-  brew upgrade
+  if [[ -z "${CI}" ]]; then
+    prompt "Update Homebrew"
+    brew update
+    brew upgrade
+    brew doctor
+  fi
 fi
-brew doctor
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 prompt "Upgrade ruby"
