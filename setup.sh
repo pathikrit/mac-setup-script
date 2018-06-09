@@ -220,6 +220,7 @@ install 'brew cask install' "${fonts[@]}"
 prompt "Upgrade bash"
 brew install bash bash-completion2 fzf
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
+sudo chsh -s $(brew --prefix)/bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
@@ -233,6 +234,11 @@ gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
 mac update
+
+if [[ -z "${CI}" ]]; then
+  prompt "Install software from App Store"
+  mas list
+fi
 
 prompt "Cleanup"
 brew cleanup
