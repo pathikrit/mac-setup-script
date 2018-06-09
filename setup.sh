@@ -3,7 +3,7 @@
 brews=(
   archey
   awscli
-  "bash-snippets --without-all-tools --with-weather"
+  "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   cheat
   coreutils
   dfc
