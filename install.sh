@@ -200,6 +200,12 @@ function brew_install_or_upgrade {
   fi
 }
 
+if [[ -z "${CI}" ]]; then
+  sudo -v # Ask for the administrator password upfront
+  # Keep-alive: update existing `sudo` time stamp until script has finished
+  while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+fi
+
 if test ! "$(command -v brew)"; then
   prompt "Install Homebrew"
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
