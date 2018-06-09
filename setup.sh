@@ -184,8 +184,12 @@ function install {
 
 function brew_install_or_upgrade {
   if brew ls --versions "$1" >/dev/null; then
-    echo "Upgrading already installed package $1 ..."
-    brew upgrade "$1"
+    if (brew outdated | grep "$1" > /dev/null); then 
+      echo "Upgrading already installed package $1 ..."
+      brew upgrade "$1"
+    else 
+      echo "Latest $1 is already installed"
+    fi
   else
     brew install "$1"
   fi
