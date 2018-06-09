@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Adapted from https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
 set -x
 
 if [[ -z "${CI}" ]]; then
@@ -7,6 +9,9 @@ if [[ -z "${CI}" ]]; then
   # Keep-alive: update existing `sudo` time stamp until script has finished
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
 
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
@@ -31,20 +36,12 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 # Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName
 
-# Disable automatic capitalization as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
-
-# Disable smart dashes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
-
-# Disable automatic period substitution as it’s annoying when typing code
-defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
-
-# Disable smart quotes as they’re annoying when typing code
-defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-
-# Disable auto-correct
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+# Disable auto corrections
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false      # Disable automatic capitalization
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false    # Disable smart dashes
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false  # Disable automatic period substitution
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false   # Disable smart quotes
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false  # Disable auto-correct
 
 # Enable full keyboard access for all controls e.g. enable Tab in modal dialogs
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -56,12 +53,14 @@ defaults write com.apple.finder QuitMenuItem -bool true
 defaults write com.apple.finder NewWindowTarget -string "PfDe"
 defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/"
 
-defaults write com.apple.finder AppleShowAllFiles -bool true        # Finder: show hidden files by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true     # Finder: show all filename extensions
-defaults write com.apple.finder ShowStatusBar -bool true            # Finder: show status bar
-defaults write com.apple.finder ShowPathbar -bool true              # Finder: show path bar
+defaults write com.apple.finder AppleShowAllFiles -bool true        # Finder: Show hidden files by default
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true     # Finder: Show all filename extensions
+defaults write com.apple.finder ShowStatusBar -bool true            # Finder: Show status bar
+defaults write com.apple.finder ShowPathbar -bool true              # Finder: Show path bar
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true  # Finder: Display full POSIX path as window title
 defaults write com.apple.finder _FXSortFoldersFirst -bool true      # Finder: Keep folders on top when sorting by name
+chflags nohidden ~/Library     # Show the ~/Library folder
+sudo chflags nohidden /Volumes # Show the /Volumes folder
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -75,22 +74,12 @@ defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 # Use list view in all Finder windows by default (codes for the other view modes: `icnv`, `clmv`, `Flwv`)
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Show the ~/Library folder
-chflags nohidden ~/Library
-
-# Show the /Volumes folder
-sudo chflags nohidden /Volumes
-
 # Expand the following File Info panes:
 # “General”, “Open with”, and “Sharing & Permissions”
 defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
 	Privileges -bool true
-
-# Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you don’t use the Dock to launch apps.
-defaults write com.apple.dock persistent-apps -array
 
 # Don’t automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
