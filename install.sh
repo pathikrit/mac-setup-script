@@ -5,11 +5,11 @@ important_casks=(
   dropbox
   google-chrome
   hyper
-  java8
   jetbrains-toolbox
   istat-menus
   spotify
   visual-studio-code
+  java8
 )
 
 brews=(
