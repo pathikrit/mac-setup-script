@@ -1,5 +1,17 @@
 #!/usr/bin/env bash
 
+# Install some stuff before others!
+important_casks=(
+  dropbox
+  google-chrome
+  hyper
+  java8
+  jetbrains-toolbox
+  istat-menus
+  spotify
+  visual-studio-code
+)
+
 brews=(
   archey
   awscli
@@ -60,15 +72,6 @@ brews=(
 )
 
 casks=(
-  # Install some stuff before others!
-  dropbox
-  google-chrome
-  hyper
-  java8
-  jetbrains-toolbox
-  istat-menus
-  spotify
-  #The rest
   adobe-acrobat-reader
   airdroid
   android-platform-tools
@@ -104,7 +107,6 @@ casks=(
   transmission
   transmission-remote-gui
   tunnelbear
-  visual-studio-code
   xquartz
 )
 
@@ -219,12 +221,15 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+echo "Install important software ..."
+brew tap caskroom/versions
+install 'brew cask install' "${important_casks[@]}"
+
 prompt "Install packages"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
 prompt "Install software"
-brew tap caskroom/versions
 install 'brew cask install' "${casks[@]}"
 
 prompt "Install secondary packages"
