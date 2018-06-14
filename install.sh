@@ -229,6 +229,13 @@ prompt "Install packages"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
+prompt "Set git defaults"
+for config in "${git_configs[@]}"
+do
+  git config --global ${config}
+done
+gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
 
@@ -246,13 +253,6 @@ sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 sudo chsh -s "$(brew --prefix)"/bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
-
-prompt "Set git defaults"
-for config in "${git_configs[@]}"
-do
-  git config --global ${config}
-done
-gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
