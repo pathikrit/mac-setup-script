@@ -232,14 +232,15 @@ install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
 prompt "Set git defaults"
-ssh-keygen -t rsa -b 4096 -C ${git_email}
 for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
+
 if [[ -z "${CI}" ]]; then
   gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
   prompt "Export key to Github"
+  ssh-keygen -t rsa -b 4096 -C ${git_email}
   pbcopy < ~/.ssh/id_rsa.pub
   open https://github.com/settings/ssh/new
 fi  
