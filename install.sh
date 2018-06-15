@@ -8,6 +8,7 @@ important_casks=(
   jetbrains-toolbox
   istat-menus
   spotify
+  franz
   visual-studio-code
   java8
 )
