@@ -236,10 +236,12 @@ for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
-gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-prompt "Export key to Github"
-pbcopy < ~/.ssh/id_rsa.pub
-open https://github.com/settings/ssh/new
+if [[ -z "${CI}" ]]; then
+  gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+  prompt "Export key to Github"
+  pbcopy < ~/.ssh/id_rsa.pub
+  open https://github.com/settings/ssh/new
+fi  
 
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
