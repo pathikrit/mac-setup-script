@@ -130,6 +130,7 @@ npms=(
 )
 
 gpg_key='3E219504'
+git_email='pathikritbhowmick@msn.com'
 git_configs=(
   "branch.autoSetupRebase always"
   "color.ui auto"
@@ -143,7 +144,7 @@ git_configs=(
   "rerere.autoUpdate true"
   "rerere.enabled true"
   "user.name pathikrit"
-  "user.email pathikritbhowmick@msn.com"
+  "user.email ${git_email}"
   "user.signingkey ${gpg_key}"
 )
 
@@ -230,11 +231,15 @@ install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
 prompt "Set git defaults"
+ssh-keygen -t rsa -b 4096 -C ${git_email}
 for config in "${git_configs[@]}"
 do
   git config --global ${config}
 done
 gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+prompt "Export key to Github"
+pbcopy < ~/.ssh/id_rsa.pub
+open https://github.com/settings/ssh/new
 
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
