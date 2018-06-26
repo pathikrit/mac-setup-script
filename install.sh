@@ -136,7 +136,6 @@ git_configs=(
   "branch.autoSetupRebase always"
   "color.ui auto"
   "core.autocrlf input"
-  "core.pager cat"
   "credential.helper osxkeychain"
   "merge.ff false"
   "pull.rebase true"
