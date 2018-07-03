@@ -104,6 +104,7 @@ casks=(
   sidekick
   skype
   slack
+  sloth
   steam
   transmission
   transmission-remote-gui
