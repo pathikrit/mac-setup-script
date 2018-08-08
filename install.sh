@@ -14,7 +14,6 @@ important_casks=(
 )
 
 brews=(
-  archey
   awscli
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   #cheat
@@ -96,6 +95,7 @@ casks=(
   macdown
   microsoft-office
   muzzle
+  neofetch
   path-finder
   plex-media-player
   plex-media-server
