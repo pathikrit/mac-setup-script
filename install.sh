@@ -72,7 +72,7 @@ brews=(
 )
 
 casks=(
-  adobe-acrobat-reader
+  adobe-acrobat-pro
   airdroid
   android-platform-tools
   cakebrew
