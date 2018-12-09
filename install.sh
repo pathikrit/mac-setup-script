@@ -156,6 +156,8 @@ vscode=(
   alanz.vscode-hie-server
   rebornix.Ruby
   redhat.java
+  scala-lang.scala
+  scalameta.scala
 )
 
 fonts=(
