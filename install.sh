@@ -3,7 +3,7 @@
 # Install some stuff before others!
 important_casks=(
   dropbox
-  google-chrome
+  #google-chrome
   hyper
   jetbrains-toolbox
   istat-menus
@@ -181,7 +181,7 @@ function install {
   for pkg in "$@";
   do
     exec="$cmd $pkg"
-    prompt "Execute: $exec"
+    #prompt "Execute: $exec"
     if ${exec} ; then
       echo "Installed $pkg"
     else
