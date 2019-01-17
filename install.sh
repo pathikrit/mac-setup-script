@@ -81,7 +81,7 @@ casks=(
   firefox
   geekbench
   google-backup-and-sync
-  github-desktop
+  github
   handbrake
   iina
   istat-server  
