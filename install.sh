@@ -156,6 +156,7 @@ vscode=(
   alanz.vscode-hie-server
   rebornix.Ruby
   redhat.java
+  rust-lang.rust
   scala-lang.scala
   scalameta.scala
 )
