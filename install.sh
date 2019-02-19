@@ -69,6 +69,7 @@ brews=(
   "vim --with-override-system-vi"
   #volumemixer
   "wget --with-iri"
+  xsv
 )
 
 casks=(
