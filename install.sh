@@ -94,7 +94,6 @@ casks=(
   quicklook-json
   quicklook-csv
   macdown
-  microsoft-office
   muzzle
   neofetch
   path-finder
