@@ -143,6 +143,7 @@ git_configs=(
   "push.default simple"
   "rebase.autostash true"
   "rerere.autoUpdate true"
+  "remote.origin.prune true"
   "rerere.enabled true"
   "user.name pathikrit"
   "user.email ${git_email}"
