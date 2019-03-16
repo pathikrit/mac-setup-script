@@ -94,7 +94,7 @@ casks=(
   quicklook-json
   quicklook-csv
   macdown
-  muzzle
+  #muzzle
   neofetch
   path-finder
   plex-media-player
