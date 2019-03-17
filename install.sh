@@ -151,15 +151,11 @@ git_configs=(
 )
 
 vscode=(
-  rust-lang.rust
-  dragos.scala-lsp
-  lightbend.vscode-sbt-scala
   alanz.vscode-hie-server
   rebornix.Ruby
   redhat.java
   rust-lang.rust
-  scala-lang.scala
-  scalameta.scala
+  scalameta.metals
 )
 
 fonts=(
