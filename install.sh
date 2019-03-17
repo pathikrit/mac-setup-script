@@ -47,7 +47,8 @@ brews=(
   moreutils
   mtr
   ncdu
-  nmap
+  neofetch
+  nmap  
   node
   poppler
   postgresql
@@ -95,7 +96,6 @@ casks=(
   quicklook-csv
   macdown
   #muzzle
-  neofetch
   path-finder
   plex-media-player
   plex-media-server
