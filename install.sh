@@ -3,7 +3,7 @@
 # Install some stuff before others!
 important_casks=(
   dropbox
-  #google-chrome
+  google-chrome
   hyper
   jetbrains-toolbox
   istat-menus
