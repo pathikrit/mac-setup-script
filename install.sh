@@ -2,6 +2,7 @@
 
 # Install some stuff before others!
 important_casks=(
+  authy
   dropbox
   google-chrome
   hyper
