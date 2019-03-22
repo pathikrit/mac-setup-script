@@ -76,6 +76,7 @@ brews=(
 )
 
 casks=(
+  aerial
   adobe-acrobat-pro
   airdroid
   android-platform-tools
