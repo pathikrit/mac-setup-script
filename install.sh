@@ -11,6 +11,7 @@ important_casks=(
   franz
   visual-studio-code
   java8
+  slack
 )
 
 brews=(
@@ -103,7 +104,6 @@ casks=(
   satellite-eyes
   sidekick
   skype
-  slack
   sloth
   steam
   transmission
