@@ -4,7 +4,7 @@
 important_casks=(
   authy
   dropbox
-  google-chrome
+  #google-chrome
   hyper
   jetbrains-toolbox
   istat-menus
@@ -246,6 +246,14 @@ if [[ -z "${CI}" ]]; then
   open https://github.com/settings/ssh/new
 fi  
 
+prompt "Upgrade bash"
+brew install bash bash-completion2 fzf
+sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
+sudo chsh -s "$(brew --prefix)"/bin/bash
+# Install https://github.com/twolfson/sexy-bash-prompt
+touch ~/.bash_profile #see https://github.com/twolfson/sexy-bash-prompt/issues/51
+(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
+
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
 
@@ -256,14 +264,6 @@ install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
 brew tap caskroom/fonts
 install 'brew cask install' "${fonts[@]}"
-
-prompt "Upgrade bash"
-brew install bash bash-completion2 fzf
-sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-sudo chsh -s "$(brew --prefix)"/bin/bash
-# Install https://github.com/twolfson/sexy-bash-prompt
-touch ~/.bash_profile #see https://github.com/twolfson/sexy-bash-prompt/issues/51
-(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
