@@ -251,14 +251,14 @@ fi
 prompt "Upgrade bash"
 brew install bash bash-completion2 fzf
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-sudo chsh -s "$(brew --prefix)"/bin/bash
+#sudo chsh -s "$(brew --prefix)"/bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 touch ~/.bash_profile #see https://github.com/twolfson/sexy-bash-prompt/issues/51
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
 prompt "Setting up xonsh"
+sudo bash -c "which xonsh >> /private/etc/shells"
 sudo chsh -s $(which xonsh)
-
 
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
