@@ -113,6 +113,7 @@ casks=(
   transmission-remote-gui
   tunnelbear
   xquartz
+  youtube-dl
 )
 
 pips=(
