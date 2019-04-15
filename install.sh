@@ -74,6 +74,7 @@ brews=(
   #volumemixer
   "wget --with-iri"
   xsv
+  youtube-dl
 )
 
 casks=(
@@ -113,7 +114,6 @@ casks=(
   transmission-remote-gui
   tunnelbear
   xquartz
-  youtube-dl
 )
 
 pips=(
