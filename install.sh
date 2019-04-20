@@ -22,6 +22,7 @@ brews=(
   #cheat
   coreutils
   dfc
+  exa
   findutils
   "fontconfig --universal"
   fpp
