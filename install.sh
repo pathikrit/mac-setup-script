@@ -19,6 +19,7 @@ brews=(
   xonsh
   awscli
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
+  bat
   #cheat
   coreutils
   dfc
