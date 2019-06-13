@@ -87,6 +87,7 @@ casks=(
   cakebrew
   cleanmymac
   docker
+  expressvpn
   firefox
   geekbench
   google-backup-and-sync
@@ -114,7 +115,6 @@ casks=(
   steam
   transmission
   transmission-remote-gui
-  tunnelbear
   xquartz
 )
 
