@@ -11,7 +11,7 @@ important_casks=(
   spotify
   franz
   visual-studio-code
-  java8
+  java
   slack
 )
 
