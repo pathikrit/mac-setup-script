@@ -275,7 +275,9 @@ install 'brew cask install' "${fonts[@]}"
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
-m update install all
+if [[ -z "${CI}" ]]; then
+  m update install all
+fi
 
 if [[ -z "${CI}" ]]; then
   prompt "Install software from App Store"
