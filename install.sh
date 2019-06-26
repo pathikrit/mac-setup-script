@@ -104,7 +104,6 @@ casks=(
   quicklook-csv
   macdown
   #muzzle
-  path-finder
   plex-media-player
   plex-media-server
   private-eye
