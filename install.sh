@@ -11,12 +11,12 @@ important_casks=(
   spotify
   franz
   visual-studio-code
-  java
   slack
 )
 
 brews=(
   xonsh
+  jabba
   awscli
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
@@ -235,6 +235,10 @@ install 'brew cask install' "${important_casks[@]}"
 prompt "Install packages"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
+
+echo "Installing JDK ...."
+jabba install amazon-corretto@1.8.222-10.1
+java -version
 
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
