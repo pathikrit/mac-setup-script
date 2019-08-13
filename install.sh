@@ -237,7 +237,9 @@ install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
 echo "Installing JDK ...."
+curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install amazon-corretto@1.8.222-10.1
+jabba use amazon-corretto@1.8.222-10.1
 java -version
 
 prompt "Set git defaults"
