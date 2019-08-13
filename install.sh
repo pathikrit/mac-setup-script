@@ -168,6 +168,8 @@ fonts=(
   font-source-code-pro
 )
 
+JDK_VERSION=amazon-corretto@1.8.222-10.1
+
 ######################################## End of app list ########################################
 set +e
 set -x
@@ -236,10 +238,11 @@ prompt "Install packages"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
-prompt "Install JDK 8"
+prompt "Install JDK=${JDK_VERSION}"
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
-jabba install amazon-corretto@1.8.222-10.1
-jabba use amazon-corretto@1.8.222-10.1
+jabba install ${JDK_VERSION}
+jabba alias default ${JDK_VERSION}
+echo 'source-bash "~/.jabba/jabba.sh"' > ~/.xonshrc
 java -version
 
 prompt "Set git defaults"
