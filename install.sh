@@ -236,7 +236,7 @@ prompt "Install packages"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
-echo "Installing JDK ...."
+prompt "Install JDK 8"
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install amazon-corretto@1.8.222-10.1
 jabba use amazon-corretto@1.8.222-10.1
@@ -278,6 +278,12 @@ install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
 brew tap caskroom/fonts
 install 'brew cask install' "${fonts[@]}"
+
+prompt "Changle Slack to dark"
+cd ~/Downloads
+git clone https://github.com/LanikSJ/slack-dark-mode
+cd slack-dark-mode
+./slack-dark-mode.sh 
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
