@@ -242,7 +242,6 @@ prompt "Install JDK=${JDK_VERSION}"
 curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install ${JDK_VERSION}
 jabba alias default ${JDK_VERSION}
-echo 'source-bash "~/.jabba/jabba.sh"' > ~/.xonshrc
 java -version
 
 prompt "Set git defaults"
@@ -270,6 +269,7 @@ touch ~/.bash_profile #see https://github.com/twolfson/sexy-bash-prompt/issues/5
 prompt "Setting up xonsh"
 sudo bash -c "which xonsh >> /private/etc/shells"
 sudo chsh -s $(which xonsh)
+echo 'source-bash "~/.bash_profile"' > ~/.xonshrc
 
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
