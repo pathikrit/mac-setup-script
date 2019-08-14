@@ -266,10 +266,16 @@ sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 touch ~/.bash_profile #see https://github.com/twolfson/sexy-bash-prompt/issues/51
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
+echo "
+alias del='mv -t ~/.Trash/'
+alias ls='exa -l'
+alias cat=bat
+" >> ~/.bash_profile
+
 prompt "Setting up xonsh"
 sudo bash -c "which xonsh >> /private/etc/shells"
 sudo chsh -s $(which xonsh)
-echo 'source-bash "~/.bash_profile"' > ~/.xonshrc
+echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
 
 prompt "Install software"
 install 'brew cask install' "${casks[@]}"
