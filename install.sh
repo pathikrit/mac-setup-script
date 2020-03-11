@@ -9,7 +9,6 @@ important_casks=(
   jetbrains-toolbox
   istat-menus
   spotify
-  franz
   visual-studio-code
   slack
 )
@@ -47,7 +46,7 @@ brews=(
   m-cli
   mackup
   macvim
-  mas
+  #mas
   micro
   moreutils
   mtr
@@ -112,6 +111,7 @@ casks=(
   skype
   sloth
   steam
+  synergy
   transmission
   transmission-remote-gui
   xquartz
@@ -287,12 +287,6 @@ install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
 brew tap caskroom/fonts
 install 'brew cask install' "${fonts[@]}"
-
-prompt "Changle Slack to dark"
-cd ~/Downloads
-git clone https://github.com/LanikSJ/slack-dark-mode
-cd slack-dark-mode
-./slack-dark-mode.sh 
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
