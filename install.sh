@@ -8,7 +8,7 @@ important_casks=(
   hyper
   jetbrains-toolbox
   istat-menus
-  spotify
+  #spotify
   visual-studio-code
   slack
 )
@@ -26,6 +26,7 @@ brews=(
   findutils
   "fontconfig --universal"
   fpp
+  github/gh/gh
   git
   git-extras
   git-fresh
