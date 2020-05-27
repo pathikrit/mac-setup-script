@@ -84,6 +84,7 @@ casks=(
   adobe-acrobat-pro
   airdroid
   android-platform-tools
+  background-music
   cakebrew
   cleanmymac
   docker
