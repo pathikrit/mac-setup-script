@@ -6,7 +6,7 @@ important_casks=(
   dropbox
   #google-chrome
   hyper
-  jetbrains-toolbox
+  #jetbrains-toolbox
   istat-menus
   #spotify
   visual-studio-code
