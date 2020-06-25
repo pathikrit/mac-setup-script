@@ -233,7 +233,7 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 echo "Install important software ..."
-brew tap caskroom/versions
+brew tap homebrew/cask-versions
 install 'brew cask install' "${important_casks[@]}"
 
 prompt "Install packages"
