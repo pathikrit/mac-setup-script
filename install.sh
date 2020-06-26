@@ -93,7 +93,7 @@ casks=(
   geekbench
   google-backup-and-sync
   github
-  handbrake
+  #handbrake
   iina
   istat-server  
   launchrocket
