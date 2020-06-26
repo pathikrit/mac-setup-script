@@ -166,7 +166,7 @@ vscode=(
 )
 
 fonts=(
-  #font-fira-code
+  font-fira-code
   font-source-code-pro
 )
 
@@ -287,8 +287,8 @@ install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
-brew tap caskroom/fonts
-install 'brew cask install' "${fonts[@]}"
+#brew tap caskroom/fonts
+#install 'brew cask install' "${fonts[@]}"
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
