@@ -114,8 +114,8 @@ casks=(
   sloth
   steam
   synergy
-  transmission
-  transmission-remote-gui
+  #transmission
+  #transmission-remote-gui
   xquartz
 )
 
