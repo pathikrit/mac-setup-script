@@ -166,7 +166,7 @@ vscode=(
 )
 
 fonts=(
-  font-fira-code
+  #font-fira-code
   font-source-code-pro
 )
 
