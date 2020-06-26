@@ -46,7 +46,7 @@ brews=(
   lnav
   m-cli
   mackup
-  macvim
+  #macvim
   #mas
   micro
   moreutils
