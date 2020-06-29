@@ -97,7 +97,7 @@ casks=(
   iina
   istat-server  
   launchrocket
-  kap-beta
+  kap
   qlcolorcode
   qlmarkdown
   qlstephen
