@@ -303,7 +303,6 @@ fi
 
 prompt "Cleanup"
 brew cleanup
-brew cask cleanup
 
 echo "Run [mackup restore] after DropBox has done syncing ..."
 echo "Done!"
