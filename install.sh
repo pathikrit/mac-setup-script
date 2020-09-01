@@ -95,19 +95,20 @@ casks=(
   github
   #handbrake
   iina
-  istat-server  
-  launchrocket
+  istat-server
   kap
+  launchrocket
+  macdown
+  monitorcontrol
+  #muzzle
+  plex-media-player
+  plex-media-server
+  private-eye
   qlcolorcode
   qlmarkdown
   qlstephen
   quicklook-json
   quicklook-csv
-  macdown
-  #muzzle
-  plex-media-player
-  plex-media-server
-  private-eye
   satellite-eyes
   sidekick
   skype
