@@ -160,10 +160,12 @@ git_configs=(
 
 vscode=(
   alanz.vscode-hie-server
+  ms-vsonline.vsonline
   rebornix.Ruby
   redhat.java
   rust-lang.rust
   scalameta.metals
+  scala-lang.scala
 )
 
 fonts=(
