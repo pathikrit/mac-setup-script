@@ -22,7 +22,7 @@ brews=(
   #cheat
   coreutils
   #dfc
-  #exa
+  exa
   #findutils
   #"fontconfig --universal"
   #fpp
