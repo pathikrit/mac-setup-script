@@ -18,7 +18,7 @@ brews=(
   jabba
   #awscli
   #"bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
-  #bat
+  bat
   #cheat
   coreutils
   #dfc
