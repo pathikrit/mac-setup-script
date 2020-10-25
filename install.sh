@@ -10,7 +10,7 @@ important_casks=(
   istat-menus
   spotify
   visual-studio-code
-  slack
+  #slack
 )
 
 brews=(
