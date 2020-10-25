@@ -8,7 +8,7 @@ important_casks=(
   hyper
   #jetbrains-toolbox
   istat-menus
-  #spotify
+  spotify
   visual-studio-code
   slack
 )
@@ -16,33 +16,33 @@ important_casks=(
 brews=(
   xonsh
   jabba
-  awscli
-  "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
-  bat
+  #awscli
+  #"bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
+  #bat
   #cheat
   coreutils
-  dfc
-  exa
-  findutils
-  "fontconfig --universal"
-  fpp
+  #dfc
+  #exa
+  #findutils
+  #"fontconfig --universal"
+  #fpp
   github/gh/gh
-  git
+  #git
   git-extras
   git-fresh
   git-lfs
-  "gnuplot --with-qt"
-  "gnu-sed --with-default-names"
-  go
-  gpg
-  haskell-stack
-  hh
+  #"gnuplot --with-qt"
+  #"gnu-sed --with-default-names"
+  #go
+  #gpg
+  #haskell-stack
+  #hh
   #hosts
   htop
   httpie
   iftop
-  "imagemagick --with-webp"
-  lighttpd
+  #"imagemagick --with-webp"
+  #lighttpd
   lnav
   m-cli
   mackup
@@ -50,26 +50,26 @@ brews=(
   #mas
   micro
   moreutils
-  mtr
-  ncdu
-  neofetch
-  nmap  
+  #mtr
+  #ncdu
+  #neofetch
+  #nmap  
   node
-  poppler
-  postgresql
-  pgcli
-  pv
+  #poppler
+  #postgresql
+  #pgcli
+  #pv
   python
   python3
-  osquery
+  #osquery
   ruby
   scala
   sbt
   shellcheck
-  stormssh
-  teleport
-  thefuck
-  tmux
+  #stormssh
+  #teleport
+  #thefuck
+  #tmux
   tree
   trash
   "vim --with-override-system-vi"
@@ -80,18 +80,18 @@ brews=(
 )
 
 casks=(
-  aerial
-  adobe-acrobat-pro
-  airdroid
-  android-platform-tools
+  #aerial
+  #adobe-acrobat-pro
+  #airdroid
+  #android-platform-tools
   background-music
   cakebrew
-  cleanmymac
-  docker
+  #cleanmymac
+  #docker
   expressvpn
   firefox
-  geekbench
-  google-backup-and-sync
+  #geekbench
+  #google-backup-and-sync
   github
   #handbrake
   iina
@@ -101,8 +101,8 @@ casks=(
   macdown
   monitorcontrol
   #muzzle
-  plex-media-player
-  plex-media-server
+  #plex-media-player
+  #plex-media-server
   private-eye
   qlcolorcode
   qlmarkdown
@@ -110,10 +110,10 @@ casks=(
   quicklook-json
   quicklook-csv
   satellite-eyes
-  sidekick
-  skype
-  sloth
-  steam
+  #sidekick
+  #skype
+  #sloth
+  #steam
   synergy
   #transmission
   #transmission-remote-gui
@@ -133,7 +133,7 @@ gems=(
 )
 
 npms=(
-  fenix-cli
+  #fenix-cli
   gitjk
   kill-tabs
   n
