@@ -307,5 +307,17 @@ fi
 prompt "Cleanup"
 brew cleanup
 
+prompt "Setting up Coatue specific stuff ..."
+gimme-aws-creds
+echo "[default]
+region = us-east-1" >> ~/.aws/config
+
+mkdir ~/workspace
+cd ~/workspace
+git clone git@github.com:coatue/DataScience.git
+cd DataScience
+sbt it:compile
+sbt github/it:test
+
 echo "Run [mackup restore] after DropBox has done syncing ..."
 echo "Done!"
