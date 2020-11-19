@@ -97,6 +97,7 @@ casks=(
   istat-server
   kap
   launchrocket
+  little-snitch
   macdown
   monitorcontrol
   #muzzle
