@@ -26,7 +26,7 @@ brews=(
   findutils
   "fontconfig --universal"
   fpp
-  github/gh/gh
+  gh
   git
   git-extras
   git-fresh
