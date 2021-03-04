@@ -83,7 +83,6 @@ casks=(
   adobe-acrobat-pro
   airdroid
   android-platform-tools
-  background-music
   cakebrew
   cleanmymac
   docker
@@ -113,6 +112,7 @@ casks=(
   sidekick
   skype
   sloth
+  soundsource
   steam
   synergy
   #transmission
