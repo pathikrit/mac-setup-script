@@ -7,7 +7,7 @@ important_casks=(
   #google-chrome
   hyper
   #jetbrains-toolbox
-  istat-menus
+  stats
   #spotify
   visual-studio-code
   slack
