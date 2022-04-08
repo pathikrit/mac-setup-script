@@ -4,71 +4,61 @@
 important_casks=(
   authy
   dropbox
-  #google-chrome
+  google-chrome
   hyper
-  #jetbrains-toolbox
+  jetbrains-toolbox
   stats
-  #spotify
+  spotify
   visual-studio-code
   slack
 )
 
 brews=(
+  ##### Install these first ######
   xonsh
   jabba
+  ################################
   awscli
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
-  #cheat
+  #cheat         # https://github.com/cheat/cheat
   coreutils
-  dfc
-  exa
+  dfc           # https://github.com/rolinh/dfc
+  exa           # https://the.exa.website/
   findutils
   "fontconfig --universal"
-  fpp
-  gh
   git
-  git-extras
-  git-fresh
+  git-extras    # for git undo
   git-lfs
   "gnuplot --with-qt"
   "gnu-sed --with-default-names"
   go
   gpg
-  haskell-stack
-  hh
   #hosts
-  htop
-  httpie
-  iftop
+  hstr          # https://github.com/dvorka/hstr
+  htop          # https://htop.dev/
+  httpie        # https://httpie.io/
+  iftop         # https://www.ex-parrot.com/~pdw/iftop/
   "imagemagick --with-webp"
-  lighttpd
-  lnav
-  m-cli
-  mackup
-  #macvim
-  #mas
-  micro
-  moreutils
-  mtr
-  ncdu
-  neofetch
-  nmap  
+  lnav          # https://lnav.org/
+  m-cli         # https://github.com/rgcr/m-cli
+  macvim        # https://macvim-dev.github.io/macvim/
+  micro         # https://github.com/zyedidia/micro
+  mtr           # https://www.bitwizard.nl/mtr/
+  neofetch      # https://github.com/dylanaraps/neofetch
   node
-  poppler
+  poppler       # https://poppler.freedesktop.org/
   postgresql
   pgcli
-  pv
+  pv            # https://www.ivarch.com/programs/pv.shtml
   python
   python3
   osquery
   ruby
   scala
   sbt
-  shellcheck
-  stormssh
-  teleport
-  thefuck
+  shellcheck    # https://www.shellcheck.net/
+  thefuck       # https://github.com/nvbn/thefuck
   tmux
   tree
   trash
@@ -81,8 +71,6 @@ brews=(
 casks=(
   aerial
   adobe-acrobat-pro
-  airdroid
-  android-platform-tools
   cakebrew
   cleanmymac
   docker
@@ -91,7 +79,7 @@ casks=(
   geekbench
   google-backup-and-sync
   github
-  #handbrake
+  handbrake
   iina
   istat-server
   kap
@@ -100,9 +88,7 @@ casks=(
   little-snitch
   macdown
   monitorcontrol
-  #muzzle
-  plex-media-player
-  plex-media-server
+  muzzle
   private-eye
   qlcolorcode
   qlmarkdown
@@ -111,13 +97,11 @@ casks=(
   quicklook-csv
   satellite-eyes
   sidekick
-  skype
   sloth
   soundsource
   steam
   synergy
-  #transmission
-  #transmission-remote-gui
+  transmission
   xquartz
 )
 
@@ -130,14 +114,11 @@ pips=(
 
 gems=(
   bundler
-  travis
 )
 
 npms=(
-  fenix-cli
   gitjk
-  kill-tabs
-  n
+  n           # https://github.com/tj/n
 )
 
 gpg_key='3E219504'
@@ -161,8 +142,10 @@ git_configs=(
 
 vscode=(
   alanz.vscode-hie-server
+  justusadam.language-haskell
   ms-vsonline.vsonline
-  rebornix.Ruby
+  ms-ossdata.vscode-postgresql
+  rebornix.ruby
   redhat.java
   rust-lang.rust
   scalameta.metals
@@ -269,8 +252,9 @@ brew install bash bash-completion2 fzf
 sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 sudo chsh -s "$(brew --prefix)"/bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
-touch ~/.bash_profile #see https://github.com/twolfson/sexy-bash-prompt/issues/51
+touch ~/.bash_profile # see https://github.com/twolfson/sexy-bash-prompt/issues/51
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
+hstr --show-configuration >> ~/.bashrc
 
 echo "
 alias del='mv -t ~/.Trash/'
@@ -308,5 +292,4 @@ fi
 prompt "Cleanup"
 brew cleanup
 
-echo "Run [mackup restore] after DropBox has done syncing ..."
 echo "Done!"
