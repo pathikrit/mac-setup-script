@@ -15,10 +15,15 @@ important_casks=(
 
 brews=(
   ##### Install these first ######
-  xonsh
-  jabba
-  ################################
   awscli
+  gimme-aws-creds  
+  git
+  jabba
+  python3
+  sbt  
+  scala
+  xonsh
+  ################################
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
   #cheat         # https://github.com/cheat/cheat
@@ -27,7 +32,6 @@ brews=(
   exa           # https://the.exa.website/
   findutils
   "fontconfig --universal"
-  git
   git-extras    # for git undo
   git-lfs
   "gnuplot --with-qt"
@@ -51,12 +55,9 @@ brews=(
   postgresql
   pgcli
   pv            # https://www.ivarch.com/programs/pv.shtml
-  python
-  python3
+  python 
   osquery
   ruby
-  scala
-  sbt
   shellcheck    # https://www.shellcheck.net/
   thefuck       # https://github.com/nvbn/thefuck
   tmux
