@@ -95,6 +95,7 @@ casks=(
   iina
   istat-server
   kap
+  keepingyouawake
   launchrocket
   little-snitch
   macdown
