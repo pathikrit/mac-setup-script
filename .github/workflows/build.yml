@@ -1,0 +1,13 @@
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set Defaults
+        run: ./defaults.sh
+      - name: Install Software
+        run: ./install.sh
+      - name: Run ShellCheck
+        uses: ludeeus/action-shellcheck@master

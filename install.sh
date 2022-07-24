@@ -3,114 +3,49 @@
 # Install some stuff before others!
 important_casks=(
   authy
-  dropbox
+  firefox
   google-chrome
-  hyper
+  iterm2
   jetbrains-toolbox
-  stats
-  spotify
-  visual-studio-code
   slack
+  visual-studio-code
 )
 
 brews=(
   ##### Install these first ######
   awscli
-  gimme-aws-creds  
+  bash
+  circleci
   git
-  jabba
+  github/gh/gh
   python3
   sbt  
   scala
-  xonsh
   ################################
-  "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
-  bat
-  #cheat         # https://github.com/cheat/cheat
   coreutils
-  dfc           # https://github.com/rolinh/dfc
-  exa           # https://the.exa.website/
-  findutils
-  "fontconfig --universal"
-  git-extras    # for git undo
-  git-lfs
-  "gnuplot --with-qt"
-  "gnu-sed --with-default-names"
   go
   gpg
   #hosts
-  hstr          # https://github.com/dvorka/hstr
-  htop          # https://htop.dev/
-  httpie        # https://httpie.io/
-  iftop         # https://www.ex-parrot.com/~pdw/iftop/
   "imagemagick --with-webp"
-  lnav          # https://lnav.org/
-  m-cli         # https://github.com/rgcr/m-cli
   macvim        # https://macvim-dev.github.io/macvim/
-  micro         # https://github.com/zyedidia/micro
-  mtr           # https://www.bitwizard.nl/mtr/
-  neofetch      # https://github.com/dylanaraps/neofetch
   node
-  poppler       # https://poppler.freedesktop.org/
-  postgresql
-  pgcli
-  pv            # https://www.ivarch.com/programs/pv.shtml
   python 
-  osquery
-  ruby
-  shellcheck    # https://www.shellcheck.net/
-  thefuck       # https://github.com/nvbn/thefuck
   tmux
   tree
-  trash
   "vim --with-override-system-vi"
   "wget --with-iri"
-  xsv
-  youtube-dl
 )
 
 casks=(
-  aerial
-  adobe-acrobat-pro
   cakebrew
+  calibre
+  discord
   cleanmymac
-  docker
-  expressvpn
-  firefox
-  geekbench
-  google-backup-and-sync
-  github
-  handbrake
-  iina
-  istat-server
-  kap
-  keepingyouawake
-  launchrocket
-  little-snitch
-  macdown
-  monitorcontrol
-  muzzle
-  private-eye
-  qlcolorcode
-  qlmarkdown
-  qlstephen
-  quicklook-json
-  quicklook-csv
-  satellite-eyes
-  sidekick
-  sloth
-  soundsource
   steam
-  synergy
-  transmission
-  xquartz
 )
 
 pips=(
   pip
-  glances
-  ohmu
-  pythonpy
 )
 
 gems=(
@@ -122,8 +57,7 @@ npms=(
   n           # https://github.com/tj/n
 )
 
-gpg_key='3E219504'
-git_email='pathikritbhowmick@msn.com'
+git_email='will.chiong@gmail.com'
 git_configs=(
   "branch.autoSetupRebase always"
   "color.ui auto"
@@ -136,25 +70,18 @@ git_configs=(
   "rerere.autoUpdate true"
   "remote.origin.prune true"
   "rerere.enabled true"
-  "user.name pathikrit"
+  "user.name Will Chiong"
   "user.email ${git_email}"
-  "user.signingkey ${gpg_key}"
 )
 
 vscode=(
-  alanz.vscode-hie-server
-  justusadam.language-haskell
-  ms-vsonline.vsonline
-  ms-ossdata.vscode-postgresql
-  rebornix.ruby
-  redhat.java
-  rust-lang.rust
   scalameta.metals
   scala-lang.scala
 )
 
 fonts=(
   font-fira-code
+  font-jetbrains-mono
   font-source-code-pro
 )
 
@@ -220,6 +147,9 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+echo "Setting BASH as shell..."
+chsh -s /bin/bash
+
 echo "Install important software ..."
 brew tap homebrew/cask-versions
 install 'brew cask install' "${important_casks[@]}"
@@ -241,7 +171,7 @@ do
 done
 
 if [[ -z "${CI}" ]]; then
-  gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+  # gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
   prompt "Export key to Github"
   ssh-keygen -t rsa -b 4096 -C ${git_email}
   pbcopy < ~/.ssh/id_rsa.pub
@@ -276,8 +206,8 @@ install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
-#brew tap caskroom/fonts
-#install 'brew cask install' "${fonts[@]}"
+brew tap caskroom/fonts
+install 'brew cask install' "${fonts[@]}"
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
