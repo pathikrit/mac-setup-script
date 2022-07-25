@@ -23,7 +23,7 @@ brews=(
   ################################
   coreutils
   #hosts
-  "imagemagick --with-webp"
+  imagemagick
   macvim        # https://macvim-dev.github.io/macvim/
   node
   python 
@@ -31,16 +31,14 @@ brews=(
   tmux
   tree
   # "vim --with-override-system-vi"
-  "wget --with-iri"
+  wget
 )
 
 casks=(
-  cakebrew
   calibre
   discord
   itsycal
-  cleanmymac
-  steam
+  sourcetree
   spectacle
 )
 
