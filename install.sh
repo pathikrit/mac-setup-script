@@ -38,8 +38,10 @@ casks=(
   calibre
   discord
   itsycal
+  signal
   sourcetree
   spectacle
+  zoom
 )
 
 pips=(
