@@ -2,7 +2,6 @@
 
 # Install some stuff before others!
 important_casks=(
-  authy
   firefox
   google-chrome
   iterm2
@@ -39,8 +38,10 @@ casks=(
   cakebrew
   calibre
   discord
+  itsycal
   cleanmymac
   steam
+  spectacle
 )
 
 pips=(
@@ -133,7 +134,7 @@ fi
 
 if test ! "$(command -v brew)"; then
   prompt "Install Homebrew"
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 else
   if [[ -z "${CI}" ]]; then
     prompt "Update Homebrew"
