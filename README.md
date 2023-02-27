@@ -1,4 +1,4 @@
-[![CI](https://github.com/pathikrit/mac-setup-script/actions/workflows/blank.yml/badge.svg)](https://github.com/pathikrit/mac-setup-script/actions/workflows/blank.yml)
+[![CI](https://github.com/pathikrit/mac-setup-script/actions/workflows/ci.yml/badge.svg)](https://github.com/pathikrit/mac-setup-script/actions/workflows/ci.yml)
 
 Dead simple script to setup my new Mac:
 ```shell
