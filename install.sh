@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Install some stuff before others!
-important_casks=(
-  authy
+# Install some stuff before others so we can start settings things up!
+important=(
+  # software
   dropbox
   google-chrome
   hyper
@@ -11,19 +11,55 @@ important_casks=(
   spotify
   visual-studio-code
   slack
-)
 
-brews=(
-  ##### Install these first ######
+  # Command line utils
   awscli
-  gimme-aws-creds  
+  gimme-aws-creds
   git
   jabba
   python3
-  sbt  
+  sbt
   scala
+  authy
   xonsh
-  ################################
+)
+
+brews=(
+  # Software
+  aerial
+  adobe-acrobat-pro
+  cakebrew
+  cleanmymac
+  docker
+  expressvpn
+  firefox
+  geekbench
+  github
+  handbrake
+  iina
+  istat-server
+  kap
+  keepingyouawake
+  launchrocket
+  little-snitch
+  macdown
+  monitorcontrol
+  muzzle
+  private-eye
+  qlcolorcode
+  qlmarkdown
+  qlstephen
+  quicklook-json
+  quicklook-csv
+  satellite-eyes
+  sidekick
+  sloth
+  soundsource
+  steam
+  synergy
+  transmission
+
+  # Command line tools
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
   #cheat         # https://github.com/cheat/cheat
@@ -65,45 +101,9 @@ brews=(
   trash
   "vim --with-override-system-vi"
   "wget --with-iri"
+  xquartz
   xsv
   youtube-dl
-)
-
-casks=(
-  aerial
-  adobe-acrobat-pro
-  cakebrew
-  cleanmymac
-  docker
-  expressvpn
-  firefox
-  geekbench
-  google-backup-and-sync
-  github
-  handbrake
-  iina
-  istat-server
-  kap
-  keepingyouawake
-  launchrocket
-  little-snitch
-  macdown
-  monitorcontrol
-  muzzle
-  private-eye
-  qlcolorcode
-  qlmarkdown
-  qlstephen
-  quicklook-json
-  quicklook-csv
-  satellite-eyes
-  sidekick
-  sloth
-  soundsource
-  steam
-  synergy
-  transmission
-  xquartz
 )
 
 pips=(
@@ -122,6 +122,7 @@ npms=(
   n           # https://github.com/tj/n
 )
 
+# Git configs
 gpg_key='3E219504'
 git_email='pathikritbhowmick@msn.com'
 git_configs=(
@@ -220,16 +221,14 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-echo "Install important software ..."
-brew tap homebrew/cask-versions
-install 'brew cask install' "${important_casks[@]}"
+echo "Install important stuff"
+install 'brew_install_or_upgrade' "${important[@]}"
 
-prompt "Install packages"
+prompt "Install all tools and software"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
 prompt "Install JDK=${JDK_VERSION}"
-curl -sL https://github.com/shyiko/jabba/raw/master/install.sh | bash && . ~/.jabba/jabba.sh
 jabba install ${JDK_VERSION}
 jabba alias default ${JDK_VERSION}
 java -version
@@ -268,16 +267,13 @@ sudo bash -c "which xonsh >> /private/etc/shells"
 sudo chsh -s $(which xonsh)
 echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
 
-prompt "Install software"
-install 'brew cask install' "${casks[@]}"
-
 prompt "Install secondary packages"
 install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
-#brew tap caskroom/fonts
-#install 'brew cask install' "${fonts[@]}"
+brew tap caskroom/fonts
+install 'brew cask install' "${fonts[@]}"
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
