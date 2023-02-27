@@ -16,7 +16,7 @@ jobs:
 
       - name: Setup env for a good brew
         run: |
-         brew unlink awscli 
+         rm /usr/local/bin/aws*
          rm /usr/local/bin/go
          rm /usr/local/bin/gofmt
 
