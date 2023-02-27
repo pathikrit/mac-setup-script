@@ -13,6 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
+      - name: Setup env for a good brew
+        run: |
+         rm /usr/local/bin/aws
+
       - run: ./defaults.sh
       - run: ./install.sh
       - run: shellcheck *.sh
