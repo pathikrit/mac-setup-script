@@ -2,7 +2,7 @@
 
 # Install some stuff before others so we can start settings things up!
 important=(
-  # software
+  # Sftware
   dropbox
   google-chrome
   hyper
@@ -46,11 +46,11 @@ brews=(
   monitorcontrol
   muzzle
   private-eye
-  qlcolorcode
-  qlmarkdown
-  qlstephen
-  quicklook-json
-  #quicklook-csv
+#  qlcolorcode
+#  qlmarkdown
+#  qlstephen
+#  quicklook-json
+#  quicklook-csv
   satellite-eyes
   sidekick
   sloth
