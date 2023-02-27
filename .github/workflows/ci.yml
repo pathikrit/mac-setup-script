@@ -16,7 +16,7 @@ jobs:
 
       - name: Setup env for a good brew
         run: |
-         rm /usr/local/bin/aws
+         rm /usr/local/bin/aws*
 
       - run: ./defaults.sh
       - run: ./install.sh
