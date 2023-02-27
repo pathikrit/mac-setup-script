@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - run: ./defaults.sh
+      - run: ./install.sh
+      - run: shellcheck *.sh
