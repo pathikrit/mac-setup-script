@@ -50,7 +50,7 @@ brews=(
   qlmarkdown
   qlstephen
   quicklook-json
-  quicklook-csv
+  #quicklook-csv
   satellite-eyes
   sidekick
   sloth
