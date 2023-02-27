@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/pathikrit/mac-setup-script.svg?branch=master)](https://travis-ci.com/pathikrit/mac-setup-script)
+[![CI](https://github.com/pathikrit/mac-setup-script/actions/workflows/blank.yml/badge.svg)](https://github.com/pathikrit/mac-setup-script/actions/workflows/blank.yml)
 
 Dead simple script to setup my new Mac:
 ```shell

@@ -1,5 +1,0 @@
-os: osx
-language: sh
-before_script: ./defaults.sh
-script: ./install.sh
-after_success: shellcheck *.sh
