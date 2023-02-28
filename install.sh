@@ -146,7 +146,6 @@ git_configs=(
 vscode=(
   alanz.vscode-hie-server
   justusadam.language-haskell
-  ms-vsonline.vsonline
   ms-ossdata.vscode-postgresql
   rebornix.ruby
   redhat.java
