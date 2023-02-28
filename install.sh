@@ -29,7 +29,7 @@ brews=(
   aerial
   adobe-acrobat-pro
   cakebrew
-  cleanmymac
+#BUILD FAILURE  cleanmymac
   docker
   expressvpn
   firefox
