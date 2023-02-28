@@ -272,7 +272,7 @@ install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 install 'brew install' "${fonts[@]}"
 
 prompt "Update packages"
