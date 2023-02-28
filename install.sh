@@ -2,7 +2,7 @@
 
 # Install some stuff before others so we can start settings things up!
 important=(
-  # Sftware
+  # Software
   dropbox
   google-chrome
   hyper
@@ -82,7 +82,7 @@ brews=(
   "imagemagick --with-webp"
   lnav          # https://lnav.org/
   m-cli         # https://github.com/rgcr/m-cli
-  macvim        # https://macvim-dev.github.io/macvim/
+#  macvim        # https://macvim-dev.github.io/macvim/
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
@@ -262,7 +262,7 @@ alias ls='exa -l'
 alias cat=bat
 " >> ~/.bash_profile
 
-prompt "Setting up xonsh"
+prompt "Set up xonsh"
 sudo bash -c "which xonsh >> /private/etc/shells"
 sudo chsh -s $(which xonsh)
 echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
