@@ -39,13 +39,14 @@ brews=(
   iina
   istat-server
   kap
-  keepingyouawake
+#BUILD FAILURE keepingyouawake
   launchrocket
   little-snitch
   macdown
   monitorcontrol
   muzzle
   private-eye
+#BUILD FAILURE
 #  qlcolorcode
 #  qlmarkdown
 #  qlstephen
@@ -82,7 +83,7 @@ brews=(
   "imagemagick --with-webp"
   lnav          # https://lnav.org/
   m-cli         # https://github.com/rgcr/m-cli
-#  macvim        # https://macvim-dev.github.io/macvim/
+#BUILD FAILURE  macvim        # https://macvim-dev.github.io/macvim/
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
