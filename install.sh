@@ -273,7 +273,7 @@ install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
 brew tap caskroom/fonts
-install 'brew cask install' "${fonts[@]}"
+install 'brew install' "${fonts[@]}"
 
 prompt "Update packages"
 pip3 install --upgrade pip setuptools wheel
