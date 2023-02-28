@@ -167,7 +167,7 @@ set -x
 
 function prompt {
   if [[ -z "${CI}" ]]; then
-    read -p "Hit Enter to $1 ..."
+    read -pr "Hit Enter to $1 ..."
   fi
 }
 
@@ -182,7 +182,7 @@ function install {
       echo "Installed $pkg"
     else
       echo "Failed to execute: $exec"
-      if [[ ! -z "${CI}" ]]; then
+      if [[ -n "${CI}" ]]; then
         exit 1
       fi
     fi
@@ -236,7 +236,7 @@ java -version
 prompt "Set git defaults"
 for config in "${git_configs[@]}"
 do
-  git config --global ${config}
+  git config --global "${config}"
 done
 
 if [[ -z "${CI}" ]]; then
@@ -253,6 +253,7 @@ sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
 sudo chsh -s "$(brew --prefix)"/bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 touch ~/.bash_profile # see https://github.com/twolfson/sexy-bash-prompt/issues/51
+# shellcheck source=/dev/null
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 hstr --show-configuration >> ~/.bashrc
 
@@ -264,7 +265,7 @@ alias cat=bat
 
 prompt "Set up xonsh"
 sudo bash -c "which xonsh >> /private/etc/shells"
-sudo chsh -s $(which xonsh)
+sudo chsh -s "$(which xonsh)"
 echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
 
 prompt "Install secondary packages"
