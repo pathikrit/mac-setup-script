@@ -44,12 +44,6 @@ brews=(
   monitorcontrol
   muzzle
   private-eye
-#BUILD FAILURE
-#  qlcolorcode
-#  qlmarkdown
-#  qlstephen
-#  quicklook-json
-#  quicklook-csv
   satellite-eyes
   sidekick      # http://oomphalot.com/sidekick/
   sloth         # https://sveinbjorn.org/sloth
