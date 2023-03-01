@@ -37,7 +37,7 @@ brews=(
   iina
   istat-server
   kap
-#BUILD FAILURE keepingyouawake
+  keepingyouawake
   launchrocket
   little-snitch
   macdown
