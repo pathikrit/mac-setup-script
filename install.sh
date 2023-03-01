@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# Install some stuff before others so we can start settings things up!
-important=(
+brews=(
+  # Install some stuff before others so we can start settings things up!
   # Software
   dropbox
   google-chrome
@@ -22,9 +22,7 @@ important=(
   scala
   authy
   xonsh
-)
 
-brews=(
   # Software
   aerial
   adobe-acrobat-pro
@@ -222,10 +220,7 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-echo "Install important stuff"
-install 'brew_install_or_upgrade' "${important[@]}"
-
-prompt "Install all tools and software"
+prompt "Install tools and software"
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
