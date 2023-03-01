@@ -104,6 +104,7 @@ brews=(
   "wget --with-iri"
   xquartz
   xsv
+  yarn
   youtube-dl
 )
 
