@@ -15,8 +15,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Remove existing brews
-        run: brew remove --force $(brew list)
+      - name: Cleanup env
+        run: |
+         rm /usr/local/bin/aws*
+         rm /usr/local/bin/go*
 
       - name: Set my defaults
         run: ./defaults.sh
