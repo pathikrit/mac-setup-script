@@ -12,14 +12,22 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Setup env for a good brew
+      - name: Cleanup env
         run: |
          rm /usr/local/bin/aws*
-         rm /usr/local/bin/go
-         rm /usr/local/bin/gofmt
+         rm /usr/local/bin/go*
 
-      - run: ./defaults.sh
-      - run: ./install.sh
-      - run: shellcheck *.sh
+      - name: Set my defaults
+        run: ./defaults.sh
+
+      - name: Install packages
+        run: ./install.sh
+
+      - name: Shellcheck
+        run: shellcheck *.sh
+
+      - name: Upgrade packages
+        run: ./install.sh
