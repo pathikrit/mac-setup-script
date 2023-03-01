@@ -28,7 +28,7 @@ brews=(
   adobe-acrobat-pro
   cakebrew
 #BUILD FAILURE  cleanmymac
-  docker
+  colima
   expressvpn
   firefox
   geekbench
@@ -51,17 +51,15 @@ brews=(
 #  quicklook-json
 #  quicklook-csv
   satellite-eyes
-  sidekick
-  sloth
-  soundsource
+  sidekick      # http://oomphalot.com/sidekick/
+  sloth         # https://sveinbjorn.org/sloth
+  soundsource   # https://rogueamoeba.com/soundsource/
   steam
-  synergy
   transmission
 
   # Command line tools
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
-  #cheat         # https://github.com/cheat/cheat
   coreutils
   dfc           # https://github.com/rolinh/dfc
   exa           # https://the.exa.website/
@@ -73,7 +71,6 @@ brews=(
   "gnu-sed --with-default-names"
   go
   gpg
-  #hosts
   hstr          # https://github.com/dvorka/hstr
   htop          # https://htop.dev/
   httpie        # https://httpie.io/
@@ -81,7 +78,6 @@ brews=(
   "imagemagick --with-webp"
   lnav          # https://lnav.org/
   m-cli         # https://github.com/rgcr/m-cli
-#BUILD FAILURE  macvim        # https://macvim-dev.github.io/macvim/
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
