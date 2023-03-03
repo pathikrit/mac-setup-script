@@ -30,6 +30,8 @@ brews=(
   cakebrew
 #BUILD FAILURE  cleanmymac
   colima
+  docker 
+  docker-compose
   expressvpn
   geekbench
   github
