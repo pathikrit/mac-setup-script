@@ -150,7 +150,7 @@ fonts=(
   font-source-code-pro
 )
 
-JDK_VERSION=amazon-corretto@1.8.222-10.1
+JDK_VERSION=amazon-corretto@1.8.0-0
 
 ######################################## End of app list ########################################
 set +e
