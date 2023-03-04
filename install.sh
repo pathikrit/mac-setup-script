@@ -29,15 +29,12 @@ brews=(
   adobe-acrobat-pro
   cakebrew
 #BUILD FAILURE  cleanmymac
-  colima
-  docker 
-  docker-compose
   expressvpn
   geekbench
   github
   handbrake
   iina
-  istat-server
+  itsycal
   kap
   keepingyouawake
   launchrocket
@@ -57,6 +54,9 @@ brews=(
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
   coreutils
+  colima
+  docker 
+  docker-compose
   dfc           # https://github.com/rolinh/dfc
   exa           # https://the.exa.website/
   findutils
