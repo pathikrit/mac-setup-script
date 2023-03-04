@@ -16,6 +16,7 @@ brews=(
 
   # Command line utils
   awscli
+  bash
   gimme-aws-creds
   git
   jabba
