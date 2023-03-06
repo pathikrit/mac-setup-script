@@ -9,6 +9,7 @@ brews=(
   google-chrome
   hyper
   jetbrains-toolbox
+  rectangle
   stats
   spotify
   visual-studio-code
