@@ -31,13 +31,13 @@ brews=(
   adobe-acrobat-pro
   cakebrew
 #BUILD FAILURE  cleanmymac
+  cleanshot
   expressvpn
   geekbench
   github
   handbrake
   iina
   itsycal
-  kap
   keepingyouawake
   launchrocket
   little-snitch
