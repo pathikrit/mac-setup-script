@@ -213,7 +213,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 echo "Installing software ..."
 for tap in "${taps[@]}"
 do
-  brew tap "${tap}"
+  brew tap ${tap}
 done
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
