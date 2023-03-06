@@ -50,7 +50,7 @@ brews=(
   sloth         # https://sveinbjorn.org/sloth
   soundsource   # https://rogueamoeba.com/soundsource/
   steam
-  transmission
+  "--cask transmission" # This is to install the software and not the CLI
 
   # Command line tools
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
