@@ -230,9 +230,9 @@ if [[ -z "${CI}" ]]; then
 fi  
 
 echo "Upgrading bash ..."
-brew install bash bash-completion2 fzf
-sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-sudo chsh -s "$(brew --prefix)"/bin/bash
+brew install bash bash-completion@2 fzf
+# /usr/local/opt/fzf/install
+sudo chsh -s /bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 touch ~/.bash_profile # see https://github.com/twolfson/sexy-bash-prompt/issues/51
 # shellcheck source=/dev/null
@@ -246,7 +246,7 @@ alias cat=bat
 
 echo "Setting up xonsh ..."
 sudo bash -c "which xonsh >> /private/etc/shells"
-sudo chsh -s "$(which xonsh)"
+#sudo chsh -s "$(which xonsh)"
 echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
 
 echo "Installing secondary packages ..."
