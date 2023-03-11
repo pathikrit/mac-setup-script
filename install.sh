@@ -3,10 +3,13 @@
 brews=(
   # Install some stuff before others so we can start settings things up!
   # Software
+  authy
   dropbox
+  firefox
   google-chrome
   hyper
   jetbrains-toolbox
+  rectangle
   stats
   spotify
   visual-studio-code
@@ -14,13 +17,13 @@ brews=(
 
   # Command line utils
   awscli
+  bash
   gimme-aws-creds
   git
   jabba
   python3
   sbt
   scala
-  authy
   xonsh
 
   # Software
@@ -29,38 +32,34 @@ brews=(
   cakebrew
   cleanmymac
   colima
+  dropbox-capture
   expressvpn
-  firefox
   geekbench
   github
   handbrake
   iina
-  istat-server
-  kap
-#BUILD FAILURE keepingyouawake
+  itsycal
+  keepingyouawake
   launchrocket
   little-snitch
   macdown
   monitorcontrol
   muzzle
   private-eye
-#BUILD FAILURE
-#  qlcolorcode
-#  qlmarkdown
-#  qlstephen
-#  quicklook-json
-#  quicklook-csv
   satellite-eyes
   sidekick      # http://oomphalot.com/sidekick/
   sloth         # https://sveinbjorn.org/sloth
   soundsource   # https://rogueamoeba.com/soundsource/
   steam
-  transmission
+  "--cask transmission" # This is to install the software and not the CLI
 
   # Command line tools
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
   coreutils
+  colima
+  docker 
+  docker-compose
   dfc           # https://github.com/rolinh/dfc
   exa           # https://the.exa.website/
   findutils
@@ -154,17 +153,11 @@ fonts=(
   font-source-code-pro
 )
 
-JDK_VERSION=amazon-corretto@1.8.222-10.1
+JDK_VERSION=amazon-corretto@1.8.0-0
 
 ######################################## End of app list ########################################
 set +e
 set -x
-
-function prompt {
-  if [[ -z "${CI}" ]]; then
-    read -pr "Hit Enter to $1 ..."
-  fi
-}
 
 function install {
   cmd=$1
@@ -172,7 +165,6 @@ function install {
   for pkg in "$@";
   do
     exec="$cmd $pkg"
-    #prompt "Execute: $exec"
     if ${exec} ; then
       echo "Installed $pkg"
     else
@@ -204,11 +196,11 @@ if [[ -z "${CI}" ]]; then
 fi
 
 if test ! "$(command -v brew)"; then
-  prompt "Install Homebrew"
+  echo "Installing Homebrew ..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 else
   if [[ -z "${CI}" ]]; then
-    prompt "Update Homebrew"
+    echo "Updating Homebrew ..."
     brew update
     brew upgrade
     brew doctor
@@ -216,16 +208,16 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-prompt "Install tools and software"
+echo "Installing software ..."
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
-prompt "Install JDK=${JDK_VERSION}"
+echo "Installing JDK=${JDK_VERSION} ..."
 jabba install ${JDK_VERSION}
 jabba alias default ${JDK_VERSION}
 java -version
 
-prompt "Set git defaults"
+echo "Setting up git defaults ..."
 for config in "${git_configs[@]}"
 do
   git config --global "${config}"
@@ -233,53 +225,54 @@ done
 
 if [[ -z "${CI}" ]]; then
   gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-  prompt "Export key to Github"
+  echo "Export key to Github"
   ssh-keygen -t rsa -b 4096 -C ${git_email}
   pbcopy < ~/.ssh/id_rsa.pub
   open https://github.com/settings/ssh/new
 fi  
 
-prompt "Upgrade bash"
-brew install bash bash-completion2 fzf
-sudo bash -c "echo $(brew --prefix)/bin/bash >> /private/etc/shells"
-sudo chsh -s "$(brew --prefix)"/bin/bash
+echo "Upgrading bash ..."
+brew install bash bash-completion@2 fzf
+# /usr/local/opt/fzf/install
+sudo chsh -s /bin/bash
 # Install https://github.com/twolfson/sexy-bash-prompt
 touch ~/.bash_profile # see https://github.com/twolfson/sexy-bash-prompt/issues/51
 # shellcheck source=/dev/null
 (cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
 hstr --show-configuration >> ~/.bashrc
-
 echo "
 alias del='mv -t ~/.Trash/'
 alias ls='exa -l'
 alias cat=bat
 " >> ~/.bash_profile
 
-prompt "Set up xonsh"
+echo "Setting up xonsh ..."
 sudo bash -c "which xonsh >> /private/etc/shells"
-sudo chsh -s "$(which xonsh)"
+#sudo chsh -s "$(which xonsh)"
 echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
 
-prompt "Install secondary packages"
+echo "Installing secondary packages ..."
 install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
+
+echo "Installing fonts ..."
 brew tap homebrew/cask-fonts
 install 'brew install' "${fonts[@]}"
 
-prompt "Update packages"
+echo "Updating packages ..."
 pip3 install --upgrade pip setuptools wheel
 if [[ -z "${CI}" ]]; then
   m update install all
 fi
 
 if [[ -z "${CI}" ]]; then
-  prompt "Install software from App Store"
+  echo "Install following software from the App Store"
   mas list
 fi
 
-prompt "Cleanup"
+echo "Cleanup"
 brew cleanup
 
 echo "Done!"
