@@ -31,7 +31,7 @@ brews=(
   adobe-acrobat-pro
   cakebrew
 #BUILD FAILURE  cleanmymac
-  cleanshot
+  dropbox-capture
   expressvpn
   geekbench
   github
