@@ -34,7 +34,8 @@ brews=(
   aerial
   adobe-acrobat-pro
   cakebrew
-#BUILD FAILURE  cleanmymac
+  cleanmymac
+  colima
   dropbox-capture
   expressvpn
   geekbench
