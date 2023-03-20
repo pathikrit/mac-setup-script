@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+taps=(
+  "popcorn-official/popcorn-desktop https://github.com/popcorn-official/popcorn-desktop.git"
+)
+
 brews=(
   # Install some stuff before others so we can start settings things up!
   # Software
@@ -44,6 +48,7 @@ brews=(
   macdown
   monitorcontrol
   muzzle
+  popcorn-time
   private-eye
   satellite-eyes
   sidekick      # http://oomphalot.com/sidekick/
@@ -208,6 +213,11 @@ fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 echo "Installing software ..."
+for tap in "${taps[@]}"
+do
+  # shellcheck disable=SC2086
+  brew tap ${tap}
+done
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
