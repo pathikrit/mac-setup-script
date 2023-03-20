@@ -46,6 +46,7 @@ brews=(
   keepingyouawake
   launchrocket
   little-snitch
+  lunar
   macdown
   monitorcontrol
   muzzle
