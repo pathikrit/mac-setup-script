@@ -121,6 +121,7 @@ gems=(
 npms=(
   gitjk
   n           # https://github.com/tj/n
+  npx
 )
 
 # Git configs
