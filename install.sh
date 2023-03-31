@@ -11,7 +11,7 @@ brews=(
   dropbox
   firefox
   google-chrome
-  hyper
+  warp
   jetbrains-toolbox
   rectangle
   stats
@@ -28,7 +28,6 @@ brews=(
   python3
   sbt
   scala
-  xonsh
 
   # Software
   aerial
@@ -243,25 +242,12 @@ if [[ -z "${CI}" ]]; then
   open https://github.com/settings/ssh/new
 fi  
 
-echo "Upgrading bash ..."
-brew install bash bash-completion@2 fzf
-# /usr/local/opt/fzf/install
-sudo chsh -s /bin/bash
-# Install https://github.com/twolfson/sexy-bash-prompt
-touch ~/.bash_profile # see https://github.com/twolfson/sexy-bash-prompt/issues/51
-# shellcheck source=/dev/null
-(cd /tmp && git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt && cd sexy-bash-prompt && make install) && source ~/.bashrc
-hstr --show-configuration >> ~/.bashrc
+echo "Setting up bash aliases ..."
 echo "
 alias del='mv -t ~/.Trash/'
 alias ls='exa -l'
 alias cat=bat
 " >> ~/.bash_profile
-
-echo "Setting up xonsh ..."
-sudo bash -c "which xonsh >> /private/etc/shells"
-#sudo chsh -s "$(which xonsh)"
-echo "source-bash --overwrite-aliases ~/.bash_profile" >> ~/.xonshrc
 
 echo "Installing secondary packages ..."
 install 'pip3 install --upgrade' "${pips[@]}"
