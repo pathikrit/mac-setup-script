@@ -4,6 +4,13 @@ taps=(
   "popcorn-official/popcorn-desktop https://github.com/popcorn-official/popcorn-desktop.git"
 )
 
+# See https://sdkman.io/
+sdks=(
+  "java 8.0.352-amzn"
+  "sbt 1.8.3"
+  "scala 2.12.18"
+)
+
 brews=(
   # Install some stuff before others so we can start settings things up!
   # Software
@@ -24,10 +31,7 @@ brews=(
   bash
   gimme-aws-creds
   git
-  jabba
   python3
-  sbt
-  scala
 
   # Software
   aerial
@@ -85,7 +89,7 @@ brews=(
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
-  node
+  node@18
   poppler       # https://poppler.freedesktop.org/
   postgresql
   pgcli
@@ -159,8 +163,6 @@ fonts=(
   font-source-code-pro
 )
 
-JDK_VERSION=amazon-corretto@1.8.0-0
-
 ######################################## End of app list ########################################
 set +e
 set -x
@@ -214,6 +216,13 @@ else
 fi
 export HOMEBREW_NO_AUTO_UPDATE=1
 
+echo "Installing SDKs ..."
+curl -s "https://get.sdkman.io" | bash
+for sdk in "${sdks[@]}"
+do
+  sdk install ${sdk}
+done
+
 echo "Installing software ..."
 for tap in "${taps[@]}"
 do
@@ -222,11 +231,6 @@ do
 done
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
-
-echo "Installing JDK=${JDK_VERSION} ..."
-jabba install ${JDK_VERSION}
-jabba alias default ${JDK_VERSION}
-java -version
 
 echo "Setting up git defaults ..."
 for config in "${git_configs[@]}"
