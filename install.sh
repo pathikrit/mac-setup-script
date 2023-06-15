@@ -86,6 +86,7 @@ brews=(
   "imagemagick --with-webp"
   lnav          # https://lnav.org/
   m-cli         # https://github.com/rgcr/m-cli
+  mas           # https://github.com/mas-cli/mas
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
@@ -221,6 +222,7 @@ curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 for sdk in "${sdks[@]}"
 do
+  # shellcheck disable=SC2086
   sdk install ${sdk}
 done
 sdk current
