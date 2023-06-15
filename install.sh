@@ -224,6 +224,8 @@ do
   sdk install ${sdk}
 done
 sdk current
+echo "Installing NVM ..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 echo "Installing software ..."
 for tap in "${taps[@]}"
@@ -262,7 +264,7 @@ echo "Setting up bash prompt ..."
 echo "Installing secondary packages ..."
 install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
-install 'npm install --global' "${npms[@]}"
+install 'npm install --global --force' "${npms[@]}"
 install 'code --install-extension' "${vscode[@]}"
 
 echo "Installing fonts ..."
