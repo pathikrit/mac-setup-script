@@ -89,7 +89,7 @@ brews=(
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
-  node@18
+  node
   poppler       # https://poppler.freedesktop.org/
   postgresql
   pgcli
@@ -223,6 +223,7 @@ for sdk in "${sdks[@]}"
 do
   sdk install ${sdk}
 done
+sdk current
 
 echo "Installing software ..."
 for tap in "${taps[@]}"
@@ -253,6 +254,10 @@ alias del='mv -t ~/.Trash/'
 alias ls='exa -l'
 alias cat=bat
 " >> ~/.bash_profile
+# https://github.com/twolfson/sexy-bash-prompt
+echo "Setting up bash prompt ..."
+(cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
+
 
 echo "Installing secondary packages ..."
 install 'pip3 install --upgrade' "${pips[@]}"
