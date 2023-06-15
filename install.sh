@@ -37,7 +37,7 @@ brews=(
   aerial
   adobe-acrobat-pro
   cakebrew
-  cleanmymac
+  # cleanmymac   # CI failure
   colima
   dropbox-capture
   expressvpn
@@ -218,6 +218,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 echo "Installing SDKs ..."
 curl -s "https://get.sdkman.io" | bash
+source "$HOME/.sdkman/bin/sdkman-init.sh"
 for sdk in "${sdks[@]}"
 do
   sdk install ${sdk}
