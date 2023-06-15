@@ -27,7 +27,7 @@ jobs:
         run: ./install.sh
 
       - name: Shellcheck
-        run: shellcheck *.sh
+        run: shellcheck -x *.sh
 
       - name: Upgrade packages
         run: ./install.sh
