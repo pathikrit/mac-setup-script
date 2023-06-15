@@ -6,5 +6,5 @@ cd ~/Downloads
 curl -sL https://raw.githubusercontent.com/pathikrit/mac-setup-script/master/defaults.sh | bash
 curl -O https://raw.githubusercontent.com/pathikrit/mac-setup-script/master/install.sh
 chmod +x install.sh
-./install.sh >> install_log.txt
+./install.sh
 ```

@@ -67,7 +67,7 @@ brews=(
   bat
   coreutils
   colima
-  docker 
+  docker
   docker-compose
   dfc           # https://github.com/rolinh/dfc
   exa           # https://the.exa.website/
@@ -95,7 +95,7 @@ brews=(
   postgresql
   pgcli
   pv            # https://www.ivarch.com/programs/pv.shtml
-  python 
+  python
   osquery
   ruby
   shellcheck    # https://www.shellcheck.net/
@@ -187,10 +187,10 @@ function install {
 
 function brew_install_or_upgrade {
   if brew ls --versions "$1" >/dev/null; then
-    if (brew outdated | grep "$1" > /dev/null); then 
+    if (brew outdated | grep "$1" > /dev/null); then
       echo "Upgrading already installed package $1 ..."
       brew upgrade "$1"
-    else 
+    else
       echo "Latest $1 is already installed"
     fi
   else
@@ -219,6 +219,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 echo "Installing SDKs ..."
 curl -s "https://get.sdkman.io" | bash
+# shellcheck source=/dev/null
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 for sdk in "${sdks[@]}"
 do
@@ -250,7 +251,7 @@ if [[ -z "${CI}" ]]; then
   ssh-keygen -t rsa -b 4096 -C ${git_email}
   pbcopy < ~/.ssh/id_rsa.pub
   open https://github.com/settings/ssh/new
-fi  
+fi
 
 echo "Setting up bash aliases ..."
 echo "
@@ -260,6 +261,7 @@ alias cat=bat
 " >> ~/.bash_profile
 # https://github.com/twolfson/sexy-bash-prompt
 echo "Setting up bash prompt ..."
+# shellcheck source=/dev/null
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
 
 
