@@ -116,6 +116,8 @@ pips=(
   glances
   ohmu
   pythonpy
+  poetry
+  streamlit
 )
 
 gems=(
