@@ -138,6 +138,7 @@ git_configs=(
   "color.ui auto"
   "core.autocrlf input"
   "credential.helper osxkeychain"
+  "init.defaultBranch master"
   "merge.ff false"
   "pull.rebase true"
   "push.default simple"
