@@ -151,17 +151,6 @@ git_configs=(
   "user.signingkey ${gpg_key}"
 )
 
-vscode=(
-  alanz.vscode-hie-server
-  justusadam.language-haskell
-  ms-ossdata.vscode-postgresql
-  rebornix.ruby
-  redhat.java
-  rust-lang.rust
-  scalameta.metals
-  scala-lang.scala
-)
-
 fonts=(
   font-fira-code
   font-source-code-pro
@@ -272,7 +261,6 @@ echo "Installing secondary packages ..."
 install 'pip3 install --upgrade' "${pips[@]}"
 install 'gem install' "${gems[@]}"
 install 'npm install --global --force' "${npms[@]}"
-install 'code --install-extension' "${vscode[@]}"
 
 echo "Installing fonts ..."
 brew tap homebrew/cask-fonts
