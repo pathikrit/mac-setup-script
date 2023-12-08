@@ -196,6 +196,8 @@ if [[ -z "${CI}" ]]; then
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
+######################################## Start Installing ########################################
+
 if test ! "$(command -v brew)"; then
   echo "Installing Homebrew ..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -272,8 +274,8 @@ if [[ -z "${CI}" ]]; then
 fi
 
 if [[ -z "${CI}" ]]; then
+  echo "Export key to Github ..."
   gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-  echo "Export key to Github"
   ssh-keygen -t rsa -b 4096 -C ${git_email}
   pbcopy < ~/.ssh/id_rsa.pub
   open https://github.com/settings/ssh/new
