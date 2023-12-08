@@ -40,6 +40,7 @@ brews=(
   # cleanmymac   # CI failure
   colima
   dropbox-capture
+  dropbox-dash
   expressvpn
   geekbench
   github
