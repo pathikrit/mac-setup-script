@@ -199,6 +199,8 @@ fi
 if test ! "$(command -v brew)"; then
   echo "Installing Homebrew ..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+  echo "Completel Homebrew installation and rerun this script ..."
+  exit 0
 else
   if [[ -z "${CI}" ]]; then
     echo "Updating Homebrew ..."
