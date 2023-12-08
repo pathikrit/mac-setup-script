@@ -239,14 +239,6 @@ do
   git config --global "${config}"
 done
 
-if [[ -z "${CI}" ]]; then
-  gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
-  echo "Export key to Github"
-  ssh-keygen -t rsa -b 4096 -C ${git_email}
-  pbcopy < ~/.ssh/id_rsa.pub
-  open https://github.com/settings/ssh/new
-fi
-
 echo "Setting up bash aliases ..."
 echo "
 alias del='mv -t ~/.Trash/'
@@ -277,6 +269,14 @@ fi
 if [[ -z "${CI}" ]]; then
   echo "Install following software from the App Store"
   mas list
+fi
+
+if [[ -z "${CI}" ]]; then
+  gpg --keyserver hkp://pgp.mit.edu --recv ${gpg_key}
+  echo "Export key to Github"
+  ssh-keygen -t rsa -b 4096 -C ${git_email}
+  pbcopy < ~/.ssh/id_rsa.pub
+  open https://github.com/settings/ssh/new
 fi
 
 echo "Cleanup"
