@@ -257,7 +257,7 @@ alias cat=bat
 echo "Setting up bash prompt ..."
 # shellcheck source=/dev/null
 (cd /tmp && ([[ -d sexy-bash-prompt ]] || git clone --depth 1 --config core.autocrlf=false https://github.com/twolfson/sexy-bash-prompt) && cd sexy-bash-prompt && make install) && source ~/.bashrc
-
+chsh -s /bin/bash
 
 echo "Installing secondary packages ..."
 install 'pip3 install --upgrade' "${pips[@]}"
