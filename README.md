@@ -1,5 +1,5 @@
 [![CI](https://github.com/pathikrit/mac-setup-script/actions/workflows/ci.yml/badge.svg)](https://github.com/pathikrit/mac-setup-script/actions/workflows/ci.yml)
-
+--no-browser
 Dead simple script to setup my new Mac:
 ```shell
 cd ~/Downloads
