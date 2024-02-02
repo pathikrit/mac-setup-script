@@ -51,7 +51,6 @@ brews=(
   launchrocket
   little-snitch
   lunar
-  macdown
   monitorcontrol
   muzzle
   popcorn-time
