@@ -133,13 +133,18 @@ npms=(
 # Git configs
 gpg_key='3E219504'
 git_email='pathikritbhowmick@msn.com'
+# See https://jvns.ca/blog/2024/02/16/popular-git-config-options/
 git_configs=(
   "branch.autoSetupRebase always"
   "color.ui auto"
   "core.autocrlf input"
+  "core.pager delta"
+  "diff.algorithm histogram"
   "credential.helper osxkeychain"
+  "help.autocorrect 10"
   "init.defaultBranch master"
   "merge.ff false"
+  "merge.conflictstyle zdiff3"
   "pull.rebase true"
   "push.default simple"
   "rebase.autostash true"
