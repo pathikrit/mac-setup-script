@@ -114,6 +114,7 @@ brews=(
 pips=(
   pip
   glances
+  nbstripout
   ohmu
   pythonpy
   poetry
