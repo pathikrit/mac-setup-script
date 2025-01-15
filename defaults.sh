@@ -10,16 +10,19 @@ if [[ -z "${CI}" ]]; then
   while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 fi
 
+# Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+# Screenshot: Show for 30s
+defaults write com.apple.screencaptureui "thumbnailExpiration" -float 30 
+
 # Disable the sound effects on boot
 sudo nvram SystemAudioVolume=" "
-
-# Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
