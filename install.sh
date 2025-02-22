@@ -91,6 +91,7 @@ brews=(
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
   node
+  nvm
   poppler       # https://poppler.freedesktop.org/
   postgresql
   pgcli
@@ -127,7 +128,6 @@ gems=(
 
 npms=(
   gitjk
-  n           # https://github.com/tj/n
   npx
 )
 
