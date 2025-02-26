@@ -135,6 +135,7 @@ npms=(
 gpg_key='3E219504'
 git_email='pathikritbhowmick@msn.com'
 # See https://jvns.ca/blog/2024/02/16/popular-git-config-options/
+# and https://blog.gitbutler.com/how-git-core-devs-configure-git/
 git_configs=(
   "branch.autoSetupRebase always"
   "color.ui auto"
