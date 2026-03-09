@@ -250,11 +250,13 @@ do
 done
 
 echo "Setting up bash aliases ..."
-echo "
+cat >> ~/.bashrc << 'EOF'
+
 alias del='mv -t ~/.Trash/'
 alias ls='exa -l'
 alias cat=bat
-" >> ~/.bash_profile
+alias gmaster='git fetch origin && git checkout $(git rev-parse --abbrev-ref origin/HEAD | sed "s|origin/||") && git merge --ff-only @{u}'
+EOF
 # https://github.com/twolfson/sexy-bash-prompt
 echo "Setting up bash prompt ..."
 # shellcheck source=/dev/null
