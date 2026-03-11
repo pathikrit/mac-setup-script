@@ -150,6 +150,7 @@ git_configs=(
   "merge.conflictstyle zdiff3"
   "pull.rebase true"
   "push.default simple"
+  "push.autoSetupRemote true"
   "rebase.autostash true"
   "rerere.autoUpdate true"
   "remote.origin.prune true"
