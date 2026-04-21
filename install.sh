@@ -19,17 +19,21 @@ brews=(
   firefox
   google-chrome
   warp
+  claude-code
   jetbrains-toolbox
   rectangle
   stats
   spotify
   visual-studio-code
-  slack
 
-  # Command line utils
+  # Work stuff
+  slack
   awscli
-  bash
   gimme-aws-creds
+  colima
+
+  # Command line utils  
+  bash  
   git
   python3
 
@@ -38,7 +42,6 @@ brews=(
   adobe-acrobat-pro
   cakebrew
   # cleanmymac   # CI failure
-  colima
   dropbox-capture
   dropbox-dash
   expressvpn
@@ -66,7 +69,6 @@ brews=(
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
   bat
   coreutils
-  colima
   docker
   docker-compose
   dfc           # https://github.com/rolinh/dfc
@@ -118,7 +120,7 @@ pips=(
   nbstripout
   ohmu
   pythonpy
-  poetry
+  uv
   streamlit
 )
 
