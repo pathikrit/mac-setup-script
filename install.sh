@@ -18,7 +18,7 @@ brews=(
   dropbox
   firefox
   google-chrome
-  warp
+  wezterm
   claude-code
   jetbrains-toolbox
   rectangle
