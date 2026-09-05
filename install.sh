@@ -1,125 +1,77 @@
 #!/usr/bin/env bash
 
-taps=(
-  "popcorn-official/popcorn-desktop https://github.com/popcorn-official/popcorn-desktop.git"
-)
-
-# See https://sdkman.io/
-sdks=(
-  "java 8.0.352-amzn"
-  "sbt 1.8.3"
-  "scala 2.12.18"
-)
-
 brews=(
   # Install some stuff before others so we can start settings things up!
+  
   # Software
   authy
   dropbox
   firefox
   google-chrome
-  wezterm
-  claude-code
-  jetbrains-toolbox
   rectangle
   stats
   spotify
   visual-studio-code
 
+  # AI
+  claude-code
+  codex
+  orca
+
   # Work stuff
   slack
   awscli
   gimme-aws-creds
-  colima
 
   # Command line utils  
-  bash  
-  git
+  bash
   python3
 
+  # Git
+  git
+  gh
+  git-lfs
+
   # Software
-  aerial
   adobe-acrobat-pro
-  cakebrew
-  # cleanmymac   # CI failure
-  dropbox-capture
-  dropbox-dash
   expressvpn
-  geekbench
-  github
-  handbrake
   iina
   itsycal
-  keepingyouawake
-  launchrocket
-  little-snitch
   lunar
   monitorcontrol
   muzzle
-  popcorn-time
   private-eye
   satellite-eyes
-  sidekick      # http://oomphalot.com/sidekick/
-  sloth         # https://sveinbjorn.org/sloth
-  soundsource   # https://rogueamoeba.com/soundsource/
-  steam
-  "--cask transmission" # This is to install the software and not the CLI
-
+  
   # Command line tools
   "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
-  bat
   coreutils
   docker
   docker-compose
-  dfc           # https://github.com/rolinh/dfc
-  exa           # https://the.exa.website/
   findutils
-  "fontconfig --universal"
-  git-extras    # for git undo
-  git-lfs
-  "gnuplot --with-qt"
+  "fontconfig --universal"      
   "gnu-sed --with-default-names"
-  go
   gpg
-  hstr          # https://github.com/dvorka/hstr
   htop          # https://htop.dev/
-  httpie        # https://httpie.io/
-  iftop         # https://www.ex-parrot.com/~pdw/iftop/
   "imagemagick --with-webp"
-  lnav          # https://lnav.org/
   m-cli         # https://github.com/rgcr/m-cli
   mas           # https://github.com/mas-cli/mas
   micro         # https://github.com/zyedidia/micro
   mtr           # https://www.bitwizard.nl/mtr/
   neofetch      # https://github.com/dylanaraps/neofetch
   node
-  nvm
-  poppler       # https://poppler.freedesktop.org/
-  postgresql
-  pgcli
-  pv            # https://www.ivarch.com/programs/pv.shtml
+  nvm  
   python
   osquery
-  ruby
-  shellcheck    # https://www.shellcheck.net/
-  thefuck       # https://github.com/nvbn/thefuck
+  ruby    
   tmux
-  tree
-  trash
+  tree  
   "vim --with-override-system-vi"
-  "wget --with-iri"
-  xquartz
-  xsv
-  yarn
-  youtube-dl
+  "wget --with-iri"  
 )
 
 pips=(
-  pip
-  glances
-  nbstripout
-  ohmu
-  pythonpy
+  pip  
   uv
   streamlit
 )
@@ -129,7 +81,6 @@ gems=(
 )
 
 npms=(
-  gitjk
   npx
 )
 
@@ -238,11 +189,6 @@ echo "Installing NVM ..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 echo "Installing software ..."
-for tap in "${taps[@]}"
-do
-  # shellcheck disable=SC2086
-  brew tap ${tap}
-done
 install 'brew_install_or_upgrade' "${brews[@]}"
 brew link --overwrite ruby
 
