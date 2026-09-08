@@ -4,7 +4,6 @@ brews=(
   # Install some stuff before others so we can start settings things up!
   
   # Software
-  authy
   dropbox
   firefox
   google-chrome
@@ -18,14 +17,13 @@ brews=(
   codex
   orca
 
-  # Work stuff
-  slack
-  awscli
-  gimme-aws-creds
-
-  # Command line utils  
+  # Programming Languages
   bash
   python3
+  node
+  nvm  
+  python
+  ruby    
 
   # Git
   git
@@ -42,30 +40,17 @@ brews=(
   muzzle
   private-eye
   satellite-eyes
-  
-  # Command line tools
-  "bash-snippets --without-all-tools --with-cryptocurrency --with-stocks --with-weather"
-  coreutils
   docker
   docker-compose
+  
+  # Command line tools
+  coreutils  
   findutils
   "fontconfig --universal"      
   "gnu-sed --with-default-names"
-  gpg
-  htop          # https://htop.dev/
+  gpg  
   "imagemagick --with-webp"
-  m-cli         # https://github.com/rgcr/m-cli
-  mas           # https://github.com/mas-cli/mas
-  micro         # https://github.com/zyedidia/micro
-  mtr           # https://www.bitwizard.nl/mtr/
-  neofetch      # https://github.com/dylanaraps/neofetch
-  node
-  nvm  
-  python
-  osquery
-  ruby    
-  tmux
-  tree  
+  tmux  
   "vim --with-override-system-vi"
   "wget --with-iri"  
 )
